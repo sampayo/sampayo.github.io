@@ -1,15 +1,5 @@
 @charset "utf-8";
 
-/* ============================== */
-/* 
-  - Title: Mycv 
-  - Autor: Imaginacionweb - Juan David Rendon
-  - Email: jdrendon@imaginacionweb.net
-  - Version: 1.0
-*/
-/* ============================== */
-
-
 /* ---------------------------------------------------------------------- */
 /*  Import styles
 /* ---------------------------------------------------------------------- */
@@ -86,7 +76,7 @@ strong{
 }
 .button{
   width: auto;
-  background-color: #000;
+  background-color: #16a085;              /* CustomColor*/
   border: 0;
   color: #fff;
   border-left: 5px;
@@ -124,7 +114,7 @@ ul li{
 /* Logo-------------------------------*/
 
 .logo{
-  border-top: 3px solid #000;
+  border-top: 3px solid #16a085;      /* CustomColor*/
 }
 .logo .title_logo{
   padding: 30px 0;
@@ -163,8 +153,13 @@ nav{
 
 /* Contens Info-------------------------------*/
 
+.break_info{
+  border-top-width: 1px;
+  border-top-style: outset;
+  border-top-color: #cdcdcd;
+}
 .info_area{
-  padding: 70px 0;
+  padding: 20px 0;
 }
 .title_section{
   display: block;
@@ -177,11 +172,11 @@ nav{
   position: relative;
   text-align: right;
   color: #fff;
-  background: #000;
+  background: #16a085;              /* CustomColor*/
 }
 .title_section .arrow_title{
   position: absolute;
-  background: url("../img/arrow_title.png") no-repeat;
+  /*background: url("../img/arrow_title.png") no-repeat;*/
   width: 37px;
   height: 48px;
   top: 0;
@@ -261,7 +256,7 @@ nav{
 
 .meter {      
       position: relative;
-      margin: 0 0 30px 0; /* Just for demo spacing */
+      margin: 0 0 10px 0; /* Just for demo spacing */
       background: #e6e6e6;   
       width: 100%;    
     }
@@ -331,7 +326,10 @@ nav{
     }
     
 .color > span {
-     background-color: #000;
+     background-color: #16a085;              /* CustomColor*/
+}
+.alternative_color > span {
+     background-color: #1676a0;
 }
  
 .nostripes > span > span, .nostripes > span:after {
@@ -592,3 +590,85 @@ footer h6{
   }
   
 }
+
+
+
+
+
+/**************************/
+
+
+
+/* Making things look pretty */
+
+/* Main part of the ribbon */
+.ribbon
+{
+  display: inline-block;
+  position: relative;
+  /*z-index: initial;*/
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.55);
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px 30px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  font-size: 32px;
+  margin: 30px 1em;
+  clear:both;
+}
+
+.ribbon:before
+{
+  content: '';
+  border-color: #006DCC transparent transparent;
+  border-style: solid;
+  border-width: 1em;
+  height: 0;
+  width: 100%;
+  position: absolute;
+  z-index: -10;
+  float: left;
+  top: 5px;
+  left: -1em;
+}
+
+.ribbon:after
+{
+  content: '';
+  border-color: transparent transparent #006DCC transparent;
+  border-style: solid;
+  border-width: 1em;
+  height: 0;
+  width: 100%;
+  position: absolute;
+  z-index: -10;
+  float: left;
+  bottom: 3px;
+  right: -1em;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.55);
+}
+
+/* Size Options */
+.ribbon.small
+{
+  font-size: 1em;
+}
+
+.ribbon.medium
+{
+  font-size: 2em;
+}
+
+.ribbon.large
+{
+  font-size: 3em;
+}
+
+.ribbon.x-large
+{
+  font-size: 4em;
+}
+
+/* Color Options */
+
