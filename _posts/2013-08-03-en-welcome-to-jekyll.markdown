@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: post_en
 title:  "Welcome to Jekyll!"
 date:   2013-08-03 16:10:42
-categories: ES jekyll update
+categories: EN jekyll update
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
@@ -22,3 +22,4 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 
 [jekyll-gh]: https://github.com/mojombo/jekyll
 [jekyll]:    http://jekyllrb.com
+
