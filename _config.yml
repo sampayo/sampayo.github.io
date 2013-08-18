@@ -1,7 +1,10 @@
 permalink: /:categories/:title
+relative_permalinks: true
 pygments: true
 paginate: 3
 name: Ricardo Sampayo
 markdown: redcarpet
 pygments: true
 
+
+# category_dir: /blog/categories

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
+        <LINK REL="shortcut icon" HREF="http://www.gravatar.com/avatar/6352c71a03d5b247726deda291af1539?s=30"/>
+
         <link rel="stylesheet" href="/css/bootstrap.css">
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/bootstrap-glyphicons.css">
 
     </head>
     <body>
@@ -22,31 +25,31 @@
     </header>
      <!-- End Logo -->
     <!-- Nav-->
-    <div class="navbar">
-      <div class="container">
-          <button type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse" class="navbar-toggle collapsed">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#" data-toggle="collapse" data-target=".navbar-responsive-collapse" class="navbar-brand collapsed visible-sm" >* * *</a>
+<div class="navbar" id="nav_bar_custom"> <!-- navbar-fixed-top -->
+  <div class="container">
 
-        <div style="height: 0px;" class="nav-collapse navbar-responsive-collapse collapse">
-                <ul id="menu" class="nav navbar-nav" >
+
+    <!-- Place everything within .nav-collapse to hide it until above 768px -->
+    <div class="nav-collapse  navbar-responsive-collapse">
+        <ul id="menu" class="nav navbar-nav" >
                     <li><a href="/#about">Sobre mi</a></li>
                     <li><a href="/#skills">Habilidades</a></li>
                     <li><a href="/#education">Educación</a></li>
                     <li><a href="/#employment">Experiencia</a></li>
                     <li><a href="/#works">Portafolio</a></li>
                     <li><a href="/#contact">Contacto</a></li>
+                    <li><a href="/blog">Blog</a></li>
                 </ul>
-              </div>
-        </div>
-    </div>
-      <div class="break_info"></div>
-    <!-- End Nav-->
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container -->
+</div><!-- /.navbar -->
+
 
     {{ content }}
+
+ {% include footer.html %}
+
+
 
      </body>
     <script src="http://code.jquery.com/jquery.js"></script>
@@ -62,6 +65,22 @@
     <!-- Bootstrap.js-->        
     <script src="/js/bootstrap.js"></script>
     <!--fUNCTIONS-->        
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39853503-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+
     <script type="text/javascript" src="/js/jquery-func.js"></script>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </html>

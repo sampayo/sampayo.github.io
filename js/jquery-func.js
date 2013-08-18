@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 
 	//=================================== Sticky nav ===================================//
-	$("nav").sticky({topSpacing:0});
+	// $("#nav_bar_custom").sticky({topSpacing:0});
 
 
  	//=================================== Nav Responsive ===================================//

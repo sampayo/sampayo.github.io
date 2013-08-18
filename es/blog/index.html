@@ -1,12 +1,10 @@
 ---
-layout: default
+layout: default_es
 title: Ricardo Sampayo
 ---
 
-
-
 {% for post in site.posts %}
-{% if post.categories[0] == "en" %}
+{% if post.categories[0] == "es" %}
  <!-- Info Area - about-->
     <section class="info_area" >
         <div class="container">
@@ -24,16 +22,21 @@ title: Ricardo Sampayo
 
                 <div class="col-sm-10">
                     <h1 class="title_resalt"><a href="{{ post.url }}">{{ post.name }}</a></h1>
-                    {% for category in post.tags %}
-                        {% if category != "en" %}
+{% for category in post.tags %}
+{% if category != "es" %}
 
-                            <span class="label label-default">{{ category }}</span>
+<span class="label label-default">{{ category }}</span>
 
-                        {% endif %}
-                    {% endfor %}
+{% endif %}
+ {% endfor %}
+     
+<!--                     <p>Info</p> -->
                     
                 </div>
             </div>
+ 
+ 
+        </div>  
     </section>
     <!-- End Section Area - about-->
 {% endif %}

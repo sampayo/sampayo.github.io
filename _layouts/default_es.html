@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
-
+        <LINK REL="shortcut icon" HREF="http://www.gravatar.com/avatar/6352c71a03d5b247726deda291af1539?s=30"/>
         <link rel="stylesheet" href="/css/bootstrap.css">
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/bootstrap-glyphicons.css">
 
     </head>
     <body>
@@ -22,32 +23,27 @@
     </header>
      <!-- End Logo -->
     <!-- Nav-->
-    <div class="navbar">
-      <div class="container">
-          <button type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse" class="navbar-toggle collapsed">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#" data-toggle="collapse" data-target=".navbar-responsive-collapse" class="navbar-brand collapsed visible-sm" >* * *</a>
+<div class="navbar" id="nav_bar_custom"> <!-- navbar-fixed-top -->
+  <div class="container">
 
-        <div style="height: 0px;" class="nav-collapse navbar-responsive-collapse collapse">
-                <ul id="menu" class="nav navbar-nav" >
-                    <li><a href="/en/#about">Sobre mi</a></li>
-                    <li><a href="/en/#skills">Habilidades</a></li>
-                    <li><a href="/en/#education">Educación</a></li>
-                    <li><a href="/en/#employment">Experiencia</a></li>
-                    <li><a href="/en/#works">Portafolio</a></li>
-                    <li><a href="/en/#contact">Contacto</a></li>
+
+    <!-- Place everything within .nav-collapse to hide it until above 768px -->
+    <div class="nav-collapse  navbar-responsive-collapse">
+        <ul id="menu" class="nav navbar-nav" >
+                    <li><a href="/es/#about">Sobre mi</a></li>
+                    <li><a href="/es/#skills">Habilidades</a></li>
+                    <li><a href="/es/#education">Educación</a></li>
+                    <li><a href="/es/#employment">Experiencia</a></li>
+                    <li><a href="/es/#works">Portafolio</a></li>
+                    <li><a href="/es/#contact">Contacto</a></li>
+                    <li><a href="/es/blog">Blog</a></li>
                 </ul>
-              </div>
-        </div>
-    </div>
-      <div class="break_info"></div>
-    <!-- End Nav-->
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container -->
+</div><!-- /.navbar -->
 
     {{ content }}
-
+ {% include footer.html %}
      </body>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script type="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
