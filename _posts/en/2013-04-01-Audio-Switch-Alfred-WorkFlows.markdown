@@ -26,6 +26,6 @@ Since I don’t have any audio device or source connected to my laptop only 1 (t
 **\*You need to get a Powerpack Alfred License to install extensions**
 
 
-[1]:http://f.cl.ly/items/3O2d3j1X041t3P1x1M3N/Captura%20de%20pantalla%202013-04-03%20a%20la(s\)%2010.44.29.png "Input" class="img-responsive"
+[1]:http://f.cl.ly/items/3O2d3j1X041t3P1x1M3N/Captura%20de%20pantalla%202013-04-03%20a%20la(s\)%2010.44.29.png "Input" {.img-responsive}
 
-[2]:http://f.cl.ly/items/0u25281D0U3p2H284719/Captura%20de%20pantalla%202013-04-03%20a%20la(s\)%2010.44.36.png "Output" class="img-responsive"
+[2]:http://f.cl.ly/items/0u25281D0U3p2H284719/Captura%20de%20pantalla%202013-04-03%20a%20la(s\)%2010.44.36.png "Output" {.img-responsive}
