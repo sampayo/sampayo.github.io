@@ -1,7 +1,10 @@
 ---
 ---
+
+
+
 [
-	{% for post in site.posts %}
+	{% for post in site.posts {|post| post["categories"][0] == "es" } %}
 		{% if post.categories[0] == "en" %}
 			{
 			  "title"    : "{{ post.title | escape }}",
@@ -9,7 +12,12 @@
 			  "url"      : "{{ post.url }}",
 			  "date"     : "{{ post.date }}"
 			} 
-			{% if forloop.last %}{% else %},{% endif %}
+				{% if forloop.last  %}
+
+				{% else %}
+				,
+				{% endif %}
+
 		{% endif %}
 	{% endfor %}
 ]
