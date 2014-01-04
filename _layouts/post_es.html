@@ -1,62 +1,104 @@
 ---
 layout: default_es
 ---
+<!-- <h2>{{ page.title }}</h2>
+<p class="meta">{{ page.date | date_to_string }}</p>
+
+<div class="post">{{ content }}</div>
+-->
 <!-- Info Area - about-->
-<section class="info_area" >
-	<div class="container">
-		<div class="title_section">
-			<h1>
-				{{ page.date | date_to_string }}
-				<span class="arrow_title"></span>
-			</h1>
-			<!-- <small>Una pequeño resumen sobre mi.</small>
-		-->
-		</div>
+
+<div class="container">
+    <div class="col-sm-9 post">
+
+		<section class="info_area" >
+			<div class="container">
+				<div class="title_section">
+					<h1>
+						{{ page.date | date_to_string }}
+						<span class="arrow_title"></span>
+					</h1>
+					<!-- <small>Una pequeño resumen sobre mi.</small>
+				-->
+				</div>
 
 
-		<div class="container post_header" >
-			<div class="col-sm-2">
-				<img src="{{ page.principal_image }}" class="img-responsive" alt="Reponsive image"></div>
+				<div class="container post_header" >
+					<div class="col-sm-2">
+						<img src="{{ page.principal_image }}" class="img-responsive" alt="Reponsive image"></div>
 
-			<div class="col-sm-10">
-				<h1 class="title_resalt">{{ page.name }}</h1>
-				{% for category in page.tags %}
-				{% if category != "es" %}
-						<span class="label label-default">{{ category }}</span>
-						{% endif %}
-				 {% endfor %}
-			
-			<div class="row social_post">
-				<ul >
-					<li><a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.name }}" data-lang="es" data-related="RicardoSampayo_" data-hashtags="{{ page.tags[0] }}" data-dnt="true">Twittear</a></li>
-					<li><div class="fb-like" data-href="{{ page.url }}" data-width="50" data-layout="button_count" data-show-faces="true" data-send="false"></div></li>
-					<li><g:plusone size="Medium"  data-href="{{ page.url }}">></g:plusone></li>
-				</ul>
-			</div>
+					<div class="col-sm-10">
+						<h1 class="title_resalt">{{ page.name }}</h1>
+						{% for category in page.tags %}
+						{% if category != "es" %}
+								<span class="label label-default">{{ category }}</span>
+								{% endif %}
+						 {% endfor %}
 
+						<div class="row social_post">
+							<ul >
+								<li><a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.name }}" data-lang="es" data-related="RicardoSampayo_" data-hashtags="{{ page.tags[0] }}" data-dnt="true">Twittear</a></li>
+								<li><div class="fb-like" data-href="{{ page.url }}" data-width="50" data-layout="button_count" data-show-faces="true" data-send="false"></div></li>
+								<li><g:plusone size="Medium"  data-href="{{ page.url }}">></g:plusone></li>
+							</ul>
+						</div>
+					
+					</div>
+				</div>
 
-			</div>
-		</div>
+				<div class="container post_content">
 
-		<div class="container post_content">
-
-			<div class="col-sm-12">
-				{{ content }}
-				<!--                     <p>Info</p>
-			-->
-			</div>
-		</div>
+					<div class="col-sm-12">
+						{{ content }}
+						<!--                     <p>Info</p>
+					-->
+					</div>
+				</div>
 				<div class="container post_header" ></div>
+		            <div class = "container">
+		                    <div id="disqus_thread"></div>
 
-            <div class = "container">
-                    <div id="disqus_thread"></div>
-
-                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
-            </div>
+		                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		    
+		            </div>
+		 
+		 
+		        </div>  
+		</section>	
 	</div>
-</section>
+<div class="col-md-3 search"> 
+	     <section class="info_area" >
+	        <div class="panel panel-primary">
+	            <div class="panel-heading">
+	              <input type="text" class="search-field" placeholder="Search for articles">
+	            </div>
+	            <div class="panel-body list-group results">
+
+	            </div>
+	          </div>
+	    </section>
+	<!-- <a href="{url}"  title="{title}">{title}</a> -->
+	</div>
+</div>
+
+<script src="/js/simpleJekyllSearch.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+     $('.search-field').simpleJekyllSearch({
+            jsonFile        : '/es/blog/search.json',
+            jsonFormat      : 'title,category,desc,url,date',
+            template        : '<a href="{url}" class="list-group-item" title="{title}">{title}</a>',
+            searchResults   : '.results',
+            searchResultsTitle   : '',
+            limit           : '10',
+            noResults       : '<p class="list-group-item">Nothing found</p>'
+    });
+
+});
+</script>
 
 
 

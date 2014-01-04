@@ -1,0 +1,15 @@
+---
+---
+[
+	{% for post in site.posts %}
+		{% if post.categories[0] == "es" %}
+			{
+			  "title"    : "{{ post.title | escape }}",
+			  "category" : "{{ post.tags }}",
+			  "url"      : "{{ post.url }}",
+			  "date"     : "{{ post.date }}"
+			} 
+			{% if forloop.last %}{% else %},{% endif %}
+		{% endif %}
+	{% endfor %}
+]

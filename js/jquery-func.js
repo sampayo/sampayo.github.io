@@ -2,13 +2,13 @@ $(document).ready(function(){
 	
 
 	//=================================== Sticky nav ===================================//
-	// $("#nav_bar_custom").sticky({topSpacing:0});
+	// $("nav").sticky({topSpacing:0});
 
 
  	//=================================== Nav Responsive ===================================//
-    $('#menu').tinyNav({
-       active: 'selected'
-    });
+    // $('#menu').tinyNav({
+    //    active: 'selected'
+    // });
 
     //=================================== IMAGE HOVER  =================================//
 

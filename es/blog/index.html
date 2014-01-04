@@ -22,13 +22,14 @@ title: Ricardo Sampayo
 
                 <div class="col-sm-10">
                     <h1 class="title_resalt"><a href="{{ post.url }}">{{ post.name }}</a></h1>
-{% for category in post.tags %}
-{% if category != "es" %}
 
-<span class="label label-default">{{ category }}</span>
+                    {% for category in post.tags %}
+                    {% if category != "es" %}
 
-{% endif %}
- {% endfor %}
+                    <span class="label label-default">{{ category }}</span>
+
+                    {% endif %}
+                     {% endfor %}
      
 <!--                     <p>Info</p> -->
                     
