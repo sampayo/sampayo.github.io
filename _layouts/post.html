@@ -126,13 +126,19 @@ $(document).ready(function() {
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
+{% for category in page.tags %}
+	{% if category != 'en' %}
+		{% assign categoria =category %}
+	{% endif %}
+{% endfor %}
 
 <script type="text/javascript">
     var addthis_config = {data_use_cookies:false}
     var addthis_share = {
         url_transforms: {
              shorten: {
-                 twitter: 'bitly'
+                 twitter: 'bitly',
+                 facebook: 'bitly'
              },
          },
          shorteners: {
@@ -142,7 +148,7 @@ $(document).ready(function() {
              }
          },
          templates : {
-         twitter : "{{title}} {{url}}"
+         twitter : "@RicardoSampayo_ publicó: {{title}} {{url}} | #{{ categoria }}"
     }
 }
 </script>
