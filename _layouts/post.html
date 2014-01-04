@@ -126,11 +126,6 @@ $(document).ready(function() {
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-{% for category in page.tags %}
-	{% if category != 'en' %}
-		{% assign categoria =category %}
-	{% endif %}
-{% endfor %}
 
 <script type="text/javascript">
     var addthis_config = {data_use_cookies:false}
@@ -148,7 +143,7 @@ $(document).ready(function() {
              }
          },
          templates : {
-         twitter : "@RicardoSampayo_ publicó: {{title}} {{url}} | #{{ categoria }}"
+         twitter : "{{ page.title }} ricardosampayo.com"
     }
 }
 </script>
