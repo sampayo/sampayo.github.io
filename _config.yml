@@ -3,7 +3,7 @@ relative_permalinks: true
 pygments: true
 paginate: 3
 name: Ricardo Sampayo
-markdown: redcarpet
+markdown: maruku
 pygments: true
 
 
