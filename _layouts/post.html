@@ -39,7 +39,7 @@ layout: default
 						 {% endfor %}
 
 
-				<!-- AddThis Button BEGIN -->
+				<div class="row social_post">
 <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
 <a class="addthis_button_preferred_1"></a>
@@ -49,18 +49,7 @@ layout: default
 <a class="addthis_button_compact"></a>
 <a class="addthis_counter addthis_bubble_style"></a>
 </div>
-<script type="text/javascript">var addthis_config = {"data_track_addressbar":true,
-			"url_transforms" : {
-          "shorten": {
-               "twitter": 'bitly',
-               "facebook": 'bitly'
-          }
-     }, 
-     "shorteners" : {
-          "bitly" : {} 
-     }
- };</script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52080e20521b6aa5"></script>
+
 <!-- AddThis Button END -->
 
 				<!-- AddThis Button END -->
@@ -137,3 +126,25 @@ $(document).ready(function() {
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
+
+<script type="text/javascript">
+    var addthis_config = {data_use_cookies:false}
+    var addthis_share = {
+        url_transforms: {
+             shorten: {
+                 twitter: 'bitly'
+             },
+         },
+         shorteners: {
+             bitly: {
+                  login: 'o_892eutnsl',
+                  apiKey: 'R_f14c43a8b7d3d43084c48cbc25b1e8ba'
+             }
+         },
+         templates : {
+         twitter : "{{title}} {{url}}"
+    }
+}
+</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52080e20521b6aa5"></script>
+
