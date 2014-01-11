@@ -1,10 +1,8 @@
 ---
 ---
 
-
-
 [
-	{% for post in site.posts {|post| post["categories"][0] == "es" } %}
+	{% for post in site.posts {|post| post["categories"][0] == "en" } %}
 		{% if post.categories[0] == "en" %}
 			{
 			  "title"    : "{{ post.title | escape }}",
