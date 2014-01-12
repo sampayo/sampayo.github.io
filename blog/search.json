@@ -1,9 +1,9 @@
 ---
 ---
-
 [
-	{% for post in site.posts {|post| post["categories"][0] == "en" } %}
-		{% if post.categories[0] == "en" %}
+	{% for post in site.categories.en  %}
+
+
 			{
 			  "title"    : "{{ post.title | escape }}",
 			  "category" : "{{ post.tags }}",
@@ -16,6 +16,5 @@
 				,
 				{% endif %}
 
-		{% endif %}
 	{% endfor %}
 ]
