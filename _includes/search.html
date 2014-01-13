@@ -1,0 +1,34 @@
+<div class="col-md-3 search"> 
+	<div class = "border_container">
+	     <section class="info_area" >
+	        <div class="panel panel-primary">
+	            <div class="panel-heading">
+	              <input type="text" class="search-field" placeholder="Search for articles">
+	            </div>
+	            <div class="panel-body list-group results">
+
+	            </div>
+	          </div>
+	    </section>
+	</div>
+	<!-- <a href="{url}"  title="{title}">{title}</a> -->
+</div>
+
+
+<script src="/js/simplejekyllSearch.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+     $('.search-field').simpleJekyllSearch({
+            jsonFile        : '/blog/search.json',
+            jsonFormat      : 'title,category,desc,url,date',
+            template        : '<a href="{url}" class="list-group-item" title="{title}">{title}</a>',
+            searchResults   : '.results',
+            searchResultsTitle   : '',
+            limit           : '10',
+            noResults       : '<p class="list-group-item">Nothing found</p>'
+    });
+
+});
+</script>

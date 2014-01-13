@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+/*16a085*/
 /* ---------------------------------------------------------------------- */
 /*  Import styles
 /* ---------------------------------------------------------------------- */
@@ -24,6 +24,11 @@ body{
   /*background-color: red;*/
 }
 a{
+  /*color: #000;*/
+  color: #16a085;
+}
+
+h1 a, h5 a{
   color: #000;
 }
 a:hover{
@@ -169,7 +174,7 @@ padding: 10px 0px;
   border-top-color: #cdcdcd;
 }
 .info_area{
-  padding: 20px 0;
+  /*padding-left: -15px;*/
 }
 .title_section{
   display: block;
@@ -631,7 +636,7 @@ footer h6, h3{
     padding: 10px 15px;
   }
   .container{
-  width: 100%;
+  /*width: 100%;*/
   padding: 0px;
   margin: 0px;
   border: 0px;
@@ -644,6 +649,7 @@ footer h6, h3{
 
   .search{
     padding: 0px;
+    /*background-color: #16a085;*/
   }
 
 
@@ -824,10 +830,10 @@ ul.social
     .line_separator{
       border-bottom: solid 1px #DFDDDD;
       box-shadow:  0px 1px 0px 0px rgba(255,255,255,0.1);
-
-      margin-left: 20px;
+/*      margin-left: 20px;
       margin-right: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 10px;*/
+      margin: 10px 20px 10px 20px;
     }
     .post
     {
@@ -842,9 +848,16 @@ ul.social
     }
 
   .border_container{
+    border: 1px solid #DFDDDD;
+    -moz-box-box-shadow: 2px 2px 1px rgba(0,0,0, 0.075);
+    -webkit-box-shadow: 2px 2px 1px rgba(0,0,0, 0.075);
+    box-shadow: 2px 2px 1px rgba(0,0,0, 0.075);
+/*
       border: solid 1px #DFDDDD;
-      box-shadow:  0px 1px 0px 0px rgba(255,255,255,0.1);
+      F0F0F0
+      box-shadow:  0px 1px 0px 0px rgba(255,255,255,0.1);*/
       padding: 20px 15px 0px 15px;
+      margin-bottom: 20px;
   }
   .search-field
   {
@@ -868,4 +881,22 @@ border: 0;
 box-shadow: 0;
 display: inline;
 }
- 
+
+.product-details h5, ul{
+padding: 0px;
+margin:0px;
+}
+.product-details span{
+  color: #16a085;
+  padding-right: 10px;
+}
+
+.carousel-control span{
+    color: #16a085;
+}
+.carousel-indicators .active {
+background-color: #16a085;
+}
+.carousel-indicators li {
+border: 1px solid #16a085;
+}

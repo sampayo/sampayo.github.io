@@ -7,6 +7,7 @@ categories: en
 author: "Ricardo Sampayo"
 principal_image: "http://siliconangle.com/files/2013/04/mulesoft-logo.jpg"
 tags: mule_esb deploy
+type: post
 ---
 
 Last month in the office we where trying to deploy our Mule application as a service to Tomcat in a server. We tried several tutorials out there involving wrapping it in a web application, .WAR files and a lot of stuff that didn’t work quite well for us.

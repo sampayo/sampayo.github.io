@@ -7,6 +7,7 @@ categories: es
 author: "Ricardo Sampayo"
 principal_image: "http://www.alfredapp.com/images/logo.png"
 tags:  alfred audio_swith
+type: post
 ---
 
 Esta extensión de [Alfred 2](http://www.alfredapp.com/) te permite cambiar rápidamente entre dispositivos de audio, tanto  de entrada (micrófonos) o de salida (Altavoces, Apple TV, etc).

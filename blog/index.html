@@ -19,9 +19,8 @@ title: Ricardo Sampayo
  -->
     <div class="col-md-9 info_container">
         <div class = "border_container">
-
         {% for post in site.posts %}
-        {% if post.categories[0] == "en" %}
+        {% if post.categories[0] == "en" and post.type == "post" %}
          <!-- Info Area - about-->
             <!-- <section class="info_area" > -->
                 <div class="row ">
@@ -56,36 +55,11 @@ title: Ricardo Sampayo
          {% endfor %}
          </div>
     </div>
-<div class="col-md-3 search"> 
-     <section class="info_area" >
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-              <input type="text" class="search-field" placeholder="Search for articles">
-            </div>
-            <div class="panel-body list-group results">
 
-            </div>
-          </div>
-    </section>
+    <!-- Section Area - search-->
+    {% include search.html %}
+    <!-- End Section Area - search-->
 </div>
 
-</div>
 
-<script src="/js/simplejekyllSearch.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-
-     $('.search-field').simpleJekyllSearch({
-            jsonFile        : '/blog/search.json',
-            jsonFormat      : 'title,category,desc,url,date',
-            template        : '<a href="{url}" class="list-group-item" title="{title}">{title}</a>',
-            searchResults   : '.results',
-            searchResultsTitle   : '',
-            limit           : '10',
-            noResults       : '<p class="list-group-item">Nothing found</p>'
-    });
-
-});
-</script>
 

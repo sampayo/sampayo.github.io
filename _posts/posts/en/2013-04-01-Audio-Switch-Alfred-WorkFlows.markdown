@@ -7,6 +7,7 @@ categories: en
 author: "Ricardo Sampayo"
 principal_image: "http://www.alfredapp.com/images/logo.png"
 tags: alfred audio_swith
+type: post
 ---
 
 Switch between your input sources and output devices.
