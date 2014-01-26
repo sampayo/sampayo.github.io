@@ -1,0 +1,21 @@
+<div class="col-md-3 col-sm-6 right_frame">
+ 	<div class = "border_container">
+ 		<h4>Últimas entradas</h4>
+		<section class="info_area row list_post"> 
+			<div class ="list-group" > 
+			{% for post in site.categories.en limit: 5 %}
+        		
+				 <a href="{{ post.url }}" class="list-group-item row">
+				 	<div class="col-xs-3"> <img src="{{ post.principal_image }}" class="img-responsive img-rounded" alt="Reponsive image"></div>
+				 	<div class="col-xs-9">
+				     <p class="list-group-item-heading title">{{ post.name }}</p>
+    				 <p class="list-group-item-text date"> <span class="glyphicon glyphicon-calendar"></span> {{ post.date | date_to_string }}</p>
+    				</div>
+				</a>
+        		
+         	{% endfor %}
+			</div>
+
+	 </section> 
+	 </div>
+</div>

@@ -1,19 +1,19 @@
 ---
 layout: product
 title:  "Mulesoft express eployment as Tomcat service"
-name:  "Desplegar el Mule ESB en un servidor de aplicaciones."
-date:   2012-12-12 16:10:42
+name:  "Catálogo undosXtres.com - iOS"
+date:   2012-06-12 16:10:42
 categories: en portfolio
 author: "Ricardo Sampayo"
-principal_image: "http://i.imgur.com/rfPoXTZ.png"
-tags: ["Objective-C", iOS7, Java, PHP, MuleSoft, CasaOliveira, CodeFuel]
+principal_image: "http://i.imgur.com/PU5EwTu.png"
+tags: ["Objective-C", iOS7, MuleSoft, undosXtres.com, CodeFuel]
 type: product
 
-type: product
-urls: ["<a href='http://elmundodelvino.com' title='Visita la página del cliente'>Casa Oliveira</a>", "<a href='http://www.codeFuel.me' title='Visita la página del desarrollador'>CodeFuel</a>"]
-wrench: ["Objective-C", iOS7, Java, PHP, MuleSoft]
-users: <a href='http://twitter.com/ricardosampayo_' title='Twitter de Ricardo Sampayo'>@ricardosampayo_</a>
-images: ["http://i.imgur.com/rfPoXTZ.png" , "http://i.imgur.com/BV52hVp.png" , "http://i.imgur.com/QAAskjP.png", "http://i.imgur.com/mswXKDh.png", "http://i.imgur.com/wV7EyaZ.png"]
+urls: ["<a href='http://undosxtres.com' target='_blank' title='Visita la página del cliente'>UndosXtres.com</a>", "<a href='http://www.codeFuel.me'  target='_blank' title='Visita la página del desarrollador'>CodeFuel</a>"]
+wrench: ["Objective-C", iOS7]
+users: ["<a href='http://twitter.com/ricardosampayo_'  target='_blank' title='Twitter de Ricardo Sampayo'>@RicardoSampayo_</a>","<a href='https://twitter.com/Enf_4eva'  target='_blank' title='Twitter de Jonathan Wiesel'>@enf_4eva</a>"]
+images: ["http://i.imgur.com/mRTlBax.png" , "http://i.imgur.com/E2p2Uoc.png"]
+abstract: ""
 ---
 
 Hace unos días trabajando en una aplicación, que requería de una herramienta de comunicación transnacional como los es [Mule ESB](http://www.mulesoft.org/), me toco implantar la herramienta en un servidor de aplicaciones, lo que resulto complicado gracias a la falta de documentación (o basqueadas erróneas), por lo que decidí montar mi solución en el blog. 

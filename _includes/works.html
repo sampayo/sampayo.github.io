@@ -18,19 +18,48 @@
 
             <div class="container">                
                 <!-- Item work-->
-                <div class="col-lg-4 col-sm-6">
+
+            {% assign num = 0 %}
+            {% for item in site.categories.portfolio %}
+                {% if item.categories[0] == "en"  %}
+
+                    {% assign num=num | plus:1 %} 
+
+                    {% if num > 3 %}
+                        <div class="hidden-lg col-sm-6">
+                    {% else %}
+                        <div class="col-lg-4 col-sm-6">
+                    {% endif %}
+                    <!-- <div class="col-lg-4 col-sm-6"> -->
+                        <div class="item-preview">
+                          <img src="{{item.principal_image}}" alt="">
+                          <div class="img-preview">
+                            <h2>{{item.name}}</h2>
+                            <p>{{item.abstract}}</p>
+                            <a class="fancybox" title="view" href="#">See more</a>
+                          </div>
+                        </div> 
+                    </div>
+
+                    {% if num > 3 %}
+                        {% break %}
+                    {% endif %}
+                {%  endif %}
+            {% endfor %}
+
+
+
+              <!--   <div class="col-lg-4 col-sm-6">
                     <div class="item-preview">
                       <img src="http://i.imgur.com/5275pFp.gif" alt="">
                       <div class="img-preview">
-                        <h2>Title Project</h2>
+                        <h2>Catálogo Casa Oliveira</h2>
                         <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
                         <a class="fancybox" title="view" href="http://placehold.it/360x360">See more</a>
                       </div>
                     </div> 
                 </div>
-                <!-- End Item work-->
 
-                <!-- Item work-->
                 <div class="col-lg-4 col-sm-6">
                     <div class="item-preview">
                       <img src="http://placehold.it/360x360" alt="">
@@ -41,9 +70,7 @@
                       </div>
                     </div> 
                 </div>
-                <!-- End Item work-->
 
-                <!-- Item work-->
                 <div class="col-lg-4 col-sm-6">
                     <div class="item-preview">
                       <img src="http://placehold.it/360x360" alt="">
@@ -54,6 +81,18 @@
                       </div>
                     </div> 
                 </div>
+
+
+                <div class="hidden-lg col-sm-6">
+                    <div class="item-preview">
+                      <img src="http://placehold.it/360x360" alt="">
+                      <div class="img-preview">
+                        <h2>Title Project</h2>
+                        <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
+                        <a class="fancybox" title="view" href="http://placehold.it/360x360">See more</a>
+                      </div>
+                    </div> 
+                </div> -->
                 <!-- End Item work-->
             </div>
 
