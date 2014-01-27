@@ -1,7 +1,7 @@
 ---
 layout: product
-title:  "Mulesoft express eployment as Tomcat service"
-name:  "Catálogo Casa Oliveira - iOS"
+title:  "Casa Oliveira Catalog - iOS"
+name:  "Casa Oliveira Catalog - iOS"
 date:   2012-12-03 16:10:42
 categories: en portfolio
 author: "Ricardo Sampayo"

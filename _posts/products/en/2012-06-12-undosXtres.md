@@ -1,7 +1,7 @@
 ---
 layout: product
-title:  "Mulesoft express eployment as Tomcat service"
-name:  "Catálogo undosXtres.com - iOS"
+title:  "UndosXtres.com Catalog - iOS"
+name:  "UndosXtres.com Catalog - iOS"
 date:   2012-06-12 16:10:42
 categories: en portfolio
 author: "Ricardo Sampayo"
