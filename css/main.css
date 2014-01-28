@@ -182,8 +182,8 @@ padding: 10px 0px;
 .title_section h1{
   padding: 0;
   display: inline-block;
-  margin: 0 0 40px 0;
-  padding: 9px 30px 9px 130px;
+  margin: 0 10px 40px 0;
+  padding: 9px 50px 9px 130px;
   position: relative;
   text-align: right;
   color: #fff;
@@ -192,10 +192,14 @@ padding: 10px 0px;
 .title_section .arrow_title{
   position: absolute;
   /*background: url("../img/arrow_title.png") no-repeat;*/
-  width: 37px;
+  width: 57px;
   height: 48px;
   top: 0;
   right: -35px;
+  background: -webkit-linear-gradient(left, #16a085 , white); /* For Safari */
+background: -o-linear-gradient(right, #16a085, white); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(right,#16a085, white); /* For Firefox 3.6 to 15 */
+background: linear-gradient(to right, #16a085 , white); /* Standard syntax (must be last) */
 }
 .title_section small{
   margin-left: 4%;
@@ -675,7 +679,7 @@ footer h6, h3{
   }
   .title_section h1{        
     margin: 0 0 10px 0;
-    padding: 9px 10px 9px 10px;   
+    padding: 9px 40px 9px 10px;   
     text-align: left;
     font-size: 24px;  
   }
