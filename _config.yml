@@ -8,5 +8,6 @@ name: Ricardo Sampayo
 markdown: maruku
 pygments: true
 
+lang: "en"
 
 # category_dir: /blog/categories
