@@ -9,7 +9,7 @@
 				 	<div class="col-xs-3"> <img src="{{ post.principal_image }}" class="img-responsive img-rounded" alt="Reponsive image"></div>
 				 	<div class="col-xs-9">
 				     <p class="list-group-item-heading title">{{ post.name }}</p>
-    				 <p class="list-group-item-text date"> <span class="glyphicon glyphicon-calendar"></span> {{ post.date | date_to_string }}</p>
+    				 <p class="list-group-item-text date"> <span class="glyphicon glyphicon-calendar"></span> {{ post.date | t: ":short_date" }}</p>
     				</div>
 				</a>
         		

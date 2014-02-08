@@ -4,6 +4,7 @@ title:  "Mulesoft express eployment as Tomcat service"
 name:  "Desplegar el Mule ESB en un servidor de aplicaciones."
 date:   2013-03-25 16:10:42
 categories: es
+lang: es
 author: "Ricardo Sampayo"
 principal_image: "http://siliconangle.com/files/2013/04/mulesoft-logo.jpg"
 tags: mule_esb deploy

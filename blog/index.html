@@ -1,66 +1,10 @@
 ---
 layout: default
 title: Ricardo Sampayo
+lang: "en"
+
 ---
-<div class="container">
-
-<!-- <div class="col-md-4 visible-sm visible-xs search"> 
-     <section class="info_area" >
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-              <input type="text" class="search-field" placeholder="Search for articles">
-            </div>
-            <div class="panel-body list-group results">
-
-            </div>
-          </div>
-    </section>
-</div>
- -->
-    <div class="col-md-9 info_container">
-        <div class = "border_container">
-        {% for post in site.posts %}
-        {% if post.categories[0] == "en" and post.type == "post" %}
-         <!-- Info Area - about-->
-            <!-- <section class="info_area" > -->
-                <div class="row ">
-                        <div class="title_section">
-                            <h1>{{ post.date | date_to_string }}
-                                <span class="arrow_title"></span>
-                            </h1>
-                            <!-- <small>Una pequeño resumen sobre mi.</small> -->
-                        </div>
-
-                        <div class="container post">
-                            <div class="col-sm-3">
-                                <img src="{{ post.principal_image }}" class="img-responsive img-rounded" alt="Reponsive image">
-                            </div>
-
-                            <div class="col-sm-9">
-                                <h1 class="title_resalt"><a href="{{ post.url }}">{{ post.name }}</a></h1>
-                                {% for category in post.tags %}
-                                    {% if category != "en" %}
-
-                                        <span class="label label-default">{{ category }}</span>
-
-                                    {% endif %}
-                                {% endfor %}
-                                
-                            </div>
-                        </div>
-                    </div>
-            <!-- </section> -->
-            <!-- End Section Area - about-->
-        {% endif %}
-         {% endfor %}
-         </div>
-    </div>
-
-    <!-- Section Area - search-->
-    {% include search.html %}
-    {% include latest_posts.html %}
-    <!-- End Section Area - search-->
-</div>
+    {% include blog.html %}
 
 
 

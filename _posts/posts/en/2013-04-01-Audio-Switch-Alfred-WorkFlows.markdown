@@ -4,6 +4,7 @@ title:  "Audio Switch Alfred-WorkFlows"
 name:  "Audio Switch Alfred-WorkFlows"
 date:   2013-04-01 16:10:42
 categories: en
+lang: en
 author: "Ricardo Sampayo"
 principal_image: "http://i.imgur.com/6bnCMY4.png"
 tags: alfred audio_swith

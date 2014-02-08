@@ -4,6 +4,7 @@ title:  "UndosXtres.com Catalog - iOS"
 name:  "UndosXtres.com Catalog - iOS"
 date:   2012-06-12 16:10:42
 categories: en portfolio
+lang: en
 author: "Ricardo Sampayo"
 principal_image: "http://i.imgur.com/PU5EwTu.png"
 tags: ["Objective-C", iOS7, MuleSoft, undosXtres.com, CodeFuel]

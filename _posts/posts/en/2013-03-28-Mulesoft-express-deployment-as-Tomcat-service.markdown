@@ -4,6 +4,7 @@ title:  "Mulesoft express eployment as Tomcat service"
 name:  "Mule ESB / Mulesoft express deployment as Tomcat service"
 date:   2013-03-25 16:10:42
 categories: en
+lang: en
 author: "Ricardo Sampayo"
 principal_image: "http://i.imgur.com/WVrZaaV.png"
 tags: mule_esb deploy

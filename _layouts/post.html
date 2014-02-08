@@ -7,56 +7,53 @@ layout: default
 <div class="post">{{ content }}</div>
 -->
 <!-- Info Area - about-->
-
 <div class="container">
+<!-- <h1>{{ page.date | localize: ":short_date" }}---</h1>
+ -->	
 
-        
-
-    <div class="col-md-9  info_container ">
+	<div class="col-md-9  info_container ">
 		<div class = "border_container">
-		<!-- <section class="info_area" > -->
+			<!-- <section class="info_area" > -->
 			<div class="row">
 				<div class="title_section">
 					<h1>
-						{{ page.date | date_to_string }}
+						{{ page.date | localize: ":short_date" }}
 						<span class="arrow_title"></span>
 					</h1>
 					<!-- <small>Una pequeño resumen sobre mi.</small>
 				-->
-				</div>
+			</div>
 
 
-				<div class="row post_header" >
-					<div class="col-sm-3">
-						<img src="{{ page.principal_image }}" class="img-responsive img-rounded" alt="Reponsive image"></div>
+			<div class="row post_header" >
+				<div class="col-sm-3">
+					<img src="{{ page.principal_image }}" class="img-responsive img-rounded" alt="Reponsive image"></div>
 
 					<div class="col-sm-9">
 						<h1 class="title_resalt">{{ page.name }}</h1>
 						{% for category in page.tags %}
-						{% if category != "en" %}
-								<span class="label label-default">{{ category }}</span>
-								{% endif %}
-						 {% endfor %}
+						<span class="label label-default">{{ category }}</span>
+						{% endfor %}
 
 
-				<div class="row social_post">
-<!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-<a class="addthis_button_preferred_1"></a>
-<a class="addthis_button_preferred_2"></a>
-<a class="addthis_button_preferred_3"></a>
-<a class="addthis_button_preferred_4"></a>
-<a class="addthis_button_compact"></a>
-<a class="addthis_counter addthis_bubble_style"></a>
-</div>
+						<div class="row social_post">
+							<!-- AddThis Button BEGIN -->
+							<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+								<a class="addthis_button_preferred_1"></a>
+								<a class="addthis_button_preferred_2"></a>
+								<a class="addthis_button_preferred_3"></a>
+								<a class="addthis_button_preferred_4"></a>
+								<a class="addthis_button_compact"></a>
+								<a class="addthis_counter addthis_bubble_style"></a>
+							</div>
 
-<!-- AddThis Button END -->
+							<!-- AddThis Button END -->
 
-				<!-- AddThis Button END -->
+							<!-- AddThis Button END -->
 
+						</div>
 					</div>
 				</div>
-			</div>
 				<div class = "container line_separator"></div>
 				<div class="container post_content">
 
@@ -64,59 +61,59 @@ layout: default
 						{{ content }}
 						<!--                     <p>Info</p>
 					-->
-					</div>
 				</div>
-				<div class = "container line_separator"></div>
-				<div class="container post_header" ></div>
-		            <div class = "container">
-		                    <div id="disqus_thread"></div>
+			</div>
+			<div class = "container line_separator"></div>
+			<div class="container post_header" ></div>
+			<div class = "container">
+				<div id="disqus_thread"></div>
 
-		                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-		    
-		            </div>
-		 
-		 
-		        </div>  
+				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+				
+			</div>
+			
+			
+		</div>  
 		<!-- </section>	 -->
 	</div>
 </div>
-	<!-- Section Area - search-->
-	{% include search.html %}
-	{% include latest_posts.html %}
-	<!-- End Section Area - search-->
+<!-- Section Area - search-->
+{% include search.html %}
+{% include latest_posts.html %}
+<!-- End Section Area - search-->
 </div>
 
 
 
 
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'ricardosampayo'; // required: replace example with your forum shortname
 	// this.language = "es_ES";
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
 </script>
 
 <script type="text/javascript">
-    var addthis_config = {data_use_cookies:false}
-    var addthis_share = {
-        url_transforms: {
-             shorten: {
-                 twitter: 'bitly',
-                 facebook: 'bitly'
-             },
-         },
-         shorteners: {
-             bitly: {
-                  login: 'o_892eutnsl',
-                  apiKey: 'R_f14c43a8b7d3d43084c48cbc25b1e8ba'
-             }
-         }
+	var addthis_config = {data_use_cookies:false}
+	var addthis_share = {
+		url_transforms: {
+			shorten: {
+				twitter: 'bitly',
+				facebook: 'bitly'
+			},
+		},
+		shorteners: {
+			bitly: {
+				login: 'o_892eutnsl',
+				apiKey: 'R_f14c43a8b7d3d43084c48cbc25b1e8ba'
+			}
+		}
          // ,
          // templates : {
          // twitter : "@RicardoSampayo_ publicó: {{title}} -> | {{url}}"

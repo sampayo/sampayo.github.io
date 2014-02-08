@@ -4,6 +4,7 @@ title:  "Mulesoft express eployment as Tomcat service"
 name:  "Desplegar el Mule ESB en un servidor de aplicaciones."
 date:   2012-12-06 16:10:42
 categories: es portfolio
+lang: es
 author: "Ricardo Sampayo"
 principal_image: "http://i.imgur.com/rfPoXTZ.png"
 tags: ["Objective-C", iOS7, Java, PHP, MuleSoft, CasaOliveira, CodeFuel]

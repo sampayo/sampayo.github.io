@@ -14,14 +14,13 @@
 	<!-- <a href="{url}"  title="{title}">{title}</a> -->
 </div>
 
-
 <script src="/js/simplejekyllSearch.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
 
      $('.search-field').simpleJekyllSearch({
-            jsonFile        : '/blog/search.json',
+            jsonFile        : '{{page.pre_url}}/blog/search.json',
             jsonFormat      : 'title,category,desc,url,date',
             template        : '<a href="{url}" class="list-group-item" title="{title}">{title}</a>',
             searchResults   : '.results',

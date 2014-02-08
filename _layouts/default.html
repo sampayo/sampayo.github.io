@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="{{page.lang}}">
     <head>
         <meta charset="utf-8">
         {% if page.description %}
@@ -16,12 +17,11 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     </head>
     <body>
-
      <!-- Logo -->
     <header class="logo" id="about">
           <div class="container">
                   <div class="title_logo">
-                      <h1>Ricardo Sampayo. <small> Ingeniero Informático</small></h1>
+                      <h1>Ricardo Sampayo. <small> {{ "header.profession" | t  }}</small></h1>
                   </div>
           </div>
     </header>
@@ -43,13 +43,13 @@
     <!-- Place everything within .nav-collapse to hide it until above 768px -->
     <div class="nav-collapse navbar-collapse navbar-ex8-collapse collapse">
         <ul id="menu" class="nav navbar-nav" >
-                    <li><a href="/#about">Sobre mi</a></li>
-                    <li><a href="/#skills">Habilidades</a></li>
-                    <li><a href="/#education">Educación</a></li>
-                    <li><a href="/#employment">Experiencia</a></li>
-                    <li><a href="/#works">Portafolio</a></li>
-                    <li><a href="/#contact">Contacto</a></li>
-                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="{{ page.pre_url }}/#about">{{ "about" | t  }}</a></li>
+                    <li><a href="{{ page.pre_url }}/#skills">{{ "skills" | t  }}</a></li>
+                    <li><a href="{{ page.pre_url }}/#education">{{ "education" | t  }}</a></li>
+                    <li><a href="{{ page.pre_url }}/#employment">{{ "employment" | t  }}</a></li>
+                    <li><a href="{{ page.pre_url }}/#works">{{ "works" | t  }}</a></li>
+                    <li><a href="{{ page.pre_url }}/#contact">{{ "contact" | t  }}</a></li>
+                    <li><a href="{{ page.pre_url }}/blog">Blog</a></li>
                 </ul>
     </div><!-- /.nav-collapse -->
   <!-- /.container -->

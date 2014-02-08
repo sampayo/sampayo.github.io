@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="col-md-9 info_container">
+        <div class = "border_container">
+        {% for post in site.posts %}
+        {% if post.categories[0] == page.lang and post.type == "post" %}
+         <!-- Info Area - about-->
+            <!-- <section class="info_area" > -->
+                <div class="row ">
+                        <div class="title_section">
+                            <h1>{{ post.date | localize: ":long_date" }}
+                                <span class="arrow_title"></span>
+                            </h1>
+                            <!-- <small>Una pequeño resumen sobre mi.</small> -->
+                        </div>
+
+                        <div class="container post">
+                            <div class="col-sm-3">
+                                <img src="{{ post.principal_image }}" class="img-responsive img-rounded" alt="Reponsive image">
+                            </div>
+
+                            <div class="col-sm-9">
+                                <h1 class="title_resalt"><a href="{{ post.url }}">{{ post.name }}</a></h1>
+                                {% for category in post.tags %}
+
+                                        <span class="label label-default">{{ category }}</span>
+
+                                {% endfor %}
+                                
+                            </div>
+                        </div>
+                    </div>
+            <!-- </section> -->
+            <!-- End Section Area - about-->
+        {% endif %}
+         {% endfor %}
+         </div>
+    </div>
+
+    <!-- Section Area - search-->
+    {% include search.html %}
+    {% include latest_posts.html %}
+    <!-- End Section Area - search-->
+</div>
