@@ -1,10 +1,10 @@
 ---
-layout: product
+layout: product_es
 title:  "Casa Oliveira Catalog - iOS"
-name:  "Casa Oliveira Catalog - iOS"
+name:  "Catálogo Casa Oliveira - iOS"
 date:   2012-12-03 16:10:42
-categories: en portfolio
-lang: en
+categories: es portfolio
+lang: es
 author: "Ricardo Sampayo"
 principal_image: "http://i.imgur.com/5275pFp.gif"
 tags: ["Objective-C", iOS7, Java, PHP, MuleSoft, CasaOliveira, CodeFuel]

@@ -1,97 +1,112 @@
 <!DOCTYPE html>
 
 <html lang="{{page.lang}}">
-    <head>
-        <meta charset="utf-8">
-        {% if page.description %}
-            <meta name="description" content="{{ page.description }}">        
-        {% endif %}
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
-        <LINK REL="shortcut icon" HREF="http://www.gravatar.com/avatar/6352c71a03d5b247726deda291af1539?s=30"/>
+<head>
+  <meta charset="utf-8">
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}">        
+  {% endif %}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ page.name }}</title>
+  <meta name="viewport" content="width=device-width">
+  <LINK REL="shortcut icon" HREF="http://www.gravatar.com/avatar/6352c71a03d5b247726deda291af1539?s=30"/>
 
-        <link rel="stylesheet" href="/css/bootstrap.css">
-        <link rel="stylesheet" href="/css/main.css">
-        <script type="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    </head>
-    <body>
-     <!-- Logo -->
-    <header class="logo" id="about">
-          <div class="container">
-                  <div class="title_logo">
-                      <h1>Ricardo Sampayo. <small> {{ "header.profession" | t  }}</small></h1>
-                  </div>
-          </div>
-    </header>
-     <!-- End Logo -->
-    <!-- Nav-->
-     <div class="container">
-<nav class="navbar navbar-default" role="navigation" id="nav_bar_custom"> <!-- navbar-fixed-top -->
- 
-<div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex8-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand visible-xs" href="#">* * *</a>
-        </div>
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script type="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+ <!-- Logo -->
+ {% assign my_url_es = page.url | remove:'/en' | remove:'/es' | remove:'index.html' | prepend:'\es' %}
+ {% assign my_url_en = page.url | remove:'/en' | remove:'/es' | remove:'index.html' %}
+
+ {% if my_url_en != "/" and my_url_en != "/blog/"  %}
+ {% assign my_url_en = my_url_en | prepend:'\en' %}
+ {% endif %}
+
+ <header class="logo" id="about">
+  <div class="container">
+
+    <div class="col-sm-3  col-sm-offset-9 language">
+      <p>
+      <a href="{{ my_url_es }} ">{{ "helper.spanish" | t  }}</a> | 
+        <a href="{{ my_url_en }} ">{{ "helper.english" | t  }}</a>
+      </p>
+    </div>
+
+    <div class="title_logo">
+      <h1>Ricardo Sampayo. <small> {{ "header.profession" | t  }}</small></h1>
+    </div>
+  </div>
+</header>
+<!-- End Logo -->
+<!-- Nav-->
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation" id="nav_bar_custom"> <!-- navbar-fixed-top -->
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex8-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand visible-xs" href="#">* * *</a>
+    </div>
 
     <!-- Place everything within .nav-collapse to hide it until above 768px -->
     <div class="nav-collapse navbar-collapse navbar-ex8-collapse collapse">
-        <ul id="menu" class="nav navbar-nav" >
-                    <li><a href="{{ page.pre_url }}/#about">{{ "about" | t  }}</a></li>
-                    <li><a href="{{ page.pre_url }}/#skills">{{ "skills" | t  }}</a></li>
-                    <li><a href="{{ page.pre_url }}/#education">{{ "education" | t  }}</a></li>
-                    <li><a href="{{ page.pre_url }}/#employment">{{ "employment" | t  }}</a></li>
-                    <li><a href="{{ page.pre_url }}/#works">{{ "works" | t  }}</a></li>
-                    <li><a href="{{ page.pre_url }}/#contact">{{ "contact" | t  }}</a></li>
-                    <li><a href="{{ page.pre_url }}/blog">Blog</a></li>
-                </ul>
+      <ul id="menu" class="nav navbar-nav" >
+        <li><a href="{{ page.pre_url }}/#about">{{ "about" | t  }}</a></li>
+        <li><a href="{{ page.pre_url }}/#skills">{{ "skills" | t  }}</a></li>
+        <li><a href="{{ page.pre_url }}/#education">{{ "education" | t  }}</a></li>
+        <li><a href="{{ page.pre_url }}/#employment">{{ "employment" | t  }}</a></li>
+        <li><a href="{{ page.pre_url }}/#works">{{ "works" | t  }}</a></li>
+        <li><a href="{{ page.pre_url }}/#contact">{{ "contact" | t  }}</a></li>
+        <li><a href="{{ page.pre_url }}/blog">Blog</a></li>
+      </ul>
     </div><!-- /.nav-collapse -->
-  <!-- /.container -->
-</nav><!-- /.navbar -->
+    <!-- /.container -->
+  </nav><!-- /.navbar -->
 
 </div>
-    {{ content }}
+{{ content }}
 
- {% include footer.html %}
+{% include footer.html %}
 
 
 
-     </body>
+</body>
 
-    
-    <!--Nav-->        
-    <script type="text/javascript" src="/js/tinynav.js"></script>
-    <script src="/js/jquery.sticky.js"></script>
-    <!--Scroll-->        
-    <script src="/js/smooth-scroll.js"></script>
-    <!--Theme Options-->        
+
+<!--Nav-->        
+<script type="text/javascript" src="/js/tinynav.js"></script>
+<script src="/js/jquery.sticky.js"></script>
+<!--Scroll-->        
+<script src="/js/smooth-scroll.js"></script>
+<!--Theme Options-->        
 <!--     // <script type="text/javascript" src="js/theme-options/theme-options.js"></script>
-    // <script type="text/javascript" src="js/theme-options/jquery.cookies.js"></script> -->
-    <!-- Bootstrap.js-->        
-    <script src="/js/bootstrap.js"></script>
-    <!--fUNCTIONS-->        
+  // <script type="text/javascript" src="js/theme-options/jquery.cookies.js"></script> -->
+  <!-- Bootstrap.js-->        
+  <script src="/js/bootstrap.js"></script>
+  <!--fUNCTIONS-->        
 
-    <!-- Google Analytics -->    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  <!-- Google Analytics -->    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-39853503-1', 'auto');
-      ga('send', 'pageview');
+    ga('create', 'UA-39853503-1', 'auto');
+    ga('send', 'pageview');
 
-    </script>
-        <!-- End Google Analytics -->    
+  </script>
+  <!-- End Google Analytics -->    
 
 
-    <script type="text/javascript" src="/js/jquery-func.js"></script>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </html>
+  <script type="text/javascript" src="/js/jquery-func.js"></script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </html>
 

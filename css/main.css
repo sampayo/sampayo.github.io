@@ -975,9 +975,15 @@ border: 1px solid #16a085;
   margin: 0px;
   padding: 0px;
 }
-.language h6 a, .language h6{
-  color: white;
+.language, .language a{
   text-align: right;
+  color: #999999;
 }
 
+.post_content h1 {font-size:30px; color:#000000; text-align:left; }
+.post_content h2 {font-size:24px; color:#000000; text-align:left; }
+.post_content h3 {font-size:20px; color:#000000; text-align:left; }
+.post_content h4 {font-size:16px; color:#000000; text-align:left; }
+.post_content h5 {font-size:14px; color:#000000; text-align:left; }
+.post_content h6 {font-size:12px; color:#000000; text-align:left; }
 

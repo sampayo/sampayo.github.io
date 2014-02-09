@@ -80,7 +80,7 @@ layout: default
 					<ul >
 						<li>
 							<span class="glyphicon glyphicon-calendar"></span>
-							{{ page.date | date_to_string }}
+							{{ page.date | localize: ":short_date" }}
 						</li>
 
 						{% if page.wrench.size >0 %}

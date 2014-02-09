@@ -227,6 +227,10 @@ es:
     phrase_dream: "“Todos tus sueños pueden hacerse realidad si tienes el coraje de perseguirlos” - Walt Disney"
     phrase_programer: "“Un buen programador es aquel que mira a los 2 lados antes de cruzar una calle de un solo sentido” - Doug Linder"    
     phrase_worth: "“El mayor riesgo es no correr ningún riesgo. En un mundo que cambia muy rápidamente, la única estrategia que garantiza fallar es no correr riesgos” - Mark Zuckerberg"
+  helper:
+    english: "Inglés"
+    spanish: "Español"  
+  latest_entries: "Últimas entradas"      
   about: "Sobre mi"
   skills: "Habilidades"
   education: "Educación"

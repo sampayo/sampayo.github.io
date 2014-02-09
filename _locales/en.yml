@@ -239,6 +239,10 @@ en:
     phrase_dream: "“All your dreams can come true if you have the courage to pursue them” - Walt Disney"
     phrase_programer: "“A good programmer is someone who always looks both ways before crossing a one-way street” - Doug Linder"
     phrase_worth: "“The biggest risk is not taking any risk. In a world that changing really quickly, the only strategy that is guaranteed to fail is not taking risks.” - Mark Zuckerberg"
+  helper:
+    english: "English"
+    spanish: "Spanish"
+  latest_entries: "Latest entries"
   about: "About"
   skills: "Skills"
   education: "Education"
