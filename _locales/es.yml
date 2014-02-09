@@ -218,6 +218,7 @@ es:
     about_me: "Mi experiencia laboral."
   works_section:
     about_me: "Mis trabajos." 
+    see_more: "Ver mas." 
   contact_section:
     about_me: "&#161;No dudes!"
     last_tweest: "Mis últimos tweets"       

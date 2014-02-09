@@ -21,7 +21,7 @@
 
             {% assign num = 0 %}
             {% for item in site.categories.portfolio %}
-                {% if item.categories[0] == "en"  %}
+                {% if item.categories[0] == page.lang  %}
 
                     {% assign num=num | plus:1 %} 
 
@@ -36,7 +36,7 @@
                           <div class="img-preview">
                             <h2>{{item.name}}</h2>
                             <p>{{item.abstract}}</p>
-                            <a class="fancybox" title="view" href="#">See more</a>
+                            <a class="fancybox" title="view" href="{{item.url}}">See more</a>
                           </div>
                         </div> 
                     </div>

@@ -229,7 +229,8 @@ en:
   employment_section:
     about_me: "Work experience."
   works_section:
-    about_me: "My Works." 
+    about_me: "My Works."
+    see_more: "See more." 
   contact_section:
     about_me: "Don't hesitate!"  
     last_tweest: "My latest tweets"  
