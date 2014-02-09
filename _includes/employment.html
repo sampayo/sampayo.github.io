@@ -1,7 +1,7 @@
    <!-- Title Area -->
     <section class="title_area">
         <div class="container">
-            <h1>“Un buen programador es aquel que mira a los 2 lados antes de cruzar una calle de un solo sentido” - Doug Linder</h1>
+            <h1>{{ "phrases_section.phrase_dream" | t  }}</h1>
         </div>  
     </section>
     <!-- End Title Area-->
@@ -15,7 +15,7 @@
                 <h1>{{ "employment" | t  }}
                     <span class="arrow_title"></span>
                 </h1>
-                <small>Mi experiencia laboral.</small>
+                <small>{{ "employment_section.about_me" | t  }}</small>
             </div>
 
             <div class="container">
@@ -25,13 +25,19 @@
                       <div class="accordion-trigger active">Co-fundador y blogger de CodeHero<span>- </span><span>2013</span></div>    
                         <div class="accordion-container:first"> 
                             <h5><a href="http://codehero.co/" target="_blank" >CodeHero.co</a></h5>     
-                            <p>Codehero se funda en mayo de 2013 como un proyecto de seis jóvenes venezolanos, residentes de la ciudad de Caracas, con el sueño de llevar los conocimientos adquiridos durante sus estudios y experiencias de trabajo, hasta las personas que no tienen acceso a ella, principalmente porque no entienden la lengua más hablada del internet, inglés.</p> 
+                            {% capture about_content %}
+                                {% include main_data/employment_codehero.markdown %}
+                            {% endcapture %}
+                            {{ about_content | unindent | markdownify }}
                         </div>
 
                          <div class="accordion-trigger">Desarrollador Senior de CodeFuel<span>- </span><span> 2012 - Presente</span></div>     
                         <div class="accordion-container">  
                             <h5>CodeFuel Desarrollos Tecnológicos</h5>     
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            {% capture about_content %}
+                                {% include main_data/employment_codefuel.markdown %}
+                            {% endcapture %}
+                            {{ about_content | unindent | markdownify }}
                         </div>
 
                         <div class="clearfix"></div>

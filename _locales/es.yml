@@ -197,6 +197,36 @@ es:
     profession: "Ingeniero Informático"
   footer:
     find_me: "&#161;Encuentrame en las Redes Sociales!"
+  about_section:
+    about_me: "Una pequeño resumen sobre mi."
+    name: "Nombre"
+    address: "Dirección"
+    nationality: "Nacionalidad"
+    birth: "Nacimiento"
+    my_nationality: "Venezolana|Española"
+    my_birth: "9 de mayo de 1988"
+  skills_section:
+    about_me: "Para lo que soy bueno"
+    languages: "Lenguajes"
+    framework: "Framework"
+    environment: "Entornos"
+    database: "Base de datos"
+  education_section:
+    about_me: "Mis institutos."
+    education_ucab: "Ingeníeria Informática"    
+  employment_section:
+    about_me: "Mi experiencia laboral."
+  works_section:
+    about_me: "Mis trabajos." 
+  contact_section:
+    about_me: "&#161;No dudes!"
+    last_tweest: "Mis últimos tweets"       
+  phrases_section:
+    phrase_luck: "“Suerte es lo que sucede cuando la preparación se encuentra con la oportunidad” - Lucius Annaeus Séneca" 
+    phrase_jobs: "“Estoy convencido de que la mitad de lo que separa a los emprendedores exitosos de los que no triunfan es la perseverancia” - Steve Jobs"   
+    phrase_dream: "“Todos tus sueños pueden hacerse realidad si tienes el coraje de perseguirlos” - Walt Disney"
+    phrase_programer: "“Un buen programador es aquel que mira a los 2 lados antes de cruzar una calle de un solo sentido” - Doug Linder"    
+    phrase_worth: "“El mayor riesgo es no correr ningún riesgo. En un mundo que cambia muy rápidamente, la única estrategia que garantiza fallar es no correr riesgos” - Mark Zuckerberg"
   about: "Sobre mi"
   skills: "Habilidades"
   education: "Educación"

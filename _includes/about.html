@@ -5,7 +5,7 @@
                 <h1>{{ "about" | t  }}
                     <span class="arrow_title"></span>
                 </h1>
-                <small>Una pequeño resumen sobre mi.</small>
+                <small>{{ "about_section.about_me" | t  }}</small>
             </div>
 
             <div class="container">
@@ -15,12 +15,10 @@
 
                 <div class="col-sm-9">
                     <!-- <h1 class="title_resalt">“Info”</h1> -->
-
-                    <p>Mi nombre es Ricardo Sampayo, nací en Caracas-Venezuela un 9 de mayo del año 1988. Desde que tengo uso de razón siento una gran inclinación hacia la electrónica y nuevas tecnologías lo que más tarde me llevó a elegir mi profesión.</p>
-                    <p>Luego de terminado mis estudios primarios, y aún con una gran pasión por la tecnología, fui admitido por la Universidad Católica Andrés Bello, una de las mejores universidades del país para estudiar Ingeniería Informática. A lo largo de la carrera tuve la oportunidad de desarrollar una formación integral con fundamentos de informática, software, hardware e incluso en gerencia de proyectos.</p>
-                    <p>Mi sed de conocimiento me ha permitido aprender múltiples tecnologías tanto móviles como web, lo que me hizo notar las carencias que existe para el aprendizaje de nuevos lenguajes en mi lengua natal, llevándo, en el 2013, a un grupo de compañeros de la universidad y a mi a formar una escuela virtual para el desarrollo del software en español, la cual llamamos <a href="http://codehero.co/" target="_blank" >CodeHero.co</a>. Esta escuela actualmente cuenta con una importante cantidad de visitantes diarios y con una proyección de crecimiento importante.</p>
-                    <p>Mis primeros pasos como profesional fueron desarrollando aplicaciones móviles para sistemas operativos iOS en una de las primeras y mejores empresas de desarrollo iOS en Venezuela: <a href="http://codefuel.me/" target="_blank" >CodeFuel</a>.</p>
-                    <p>En mi tiempo libre cuando no estoy investigando o desarrollando nuevos software, me gusta descubrir nueva música, viajar y conocer nuevos lugares, practicar buceo, o simplemente ser el espectador de un buen partido de fútbol</p>
+                {% capture about_content %}
+                    {% include main_data/biography.markdown %}
+                {% endcapture %}
+                {{ about_content | unindent | markdownify }}
                     
                 </div>
             </div>
@@ -30,7 +28,7 @@
               <div class="col-lg-3 col-sm-6">
                 <div class="container item_info">
                     <i class="glyphicon glyphicon-user"></i>
-                    <h4>Nombre</h4>
+                    <h4>{{ "about_section.name" | t  }}</h4>
                     <p>Ricardo A. Sampayo Sanchez</p>
                 </div>
               </div>
@@ -38,7 +36,7 @@
               <div class="col-lg-3 col-sm-6">
                 <div class="container item_info">
                     <i class="glyphicon glyphicon-home"></i>
-                    <h4>Dirección</h4>
+                    <h4>{{ "about_section.address" | t  }}</h4>
                     <p>Caracas, Venezuela</p>
                 </div>
               </div>
@@ -46,16 +44,16 @@
               <div class="col-lg-3 col-sm-6">
                 <div class="container item_info">
                     <i class="glyphicon glyphicon-flag"></i>
-                    <h4>Nacionalidad</h4>
-                    <p>Venezolano/Español</p>
+                    <h4>{{ "about_section.nationality" | t  }}</h4>
+                    <p>{{ "about_section.my_nationality" | t  }}</p>
                 </div>
               </div>
 
               <div class="col-lg-3 col-sm-6">
                 <div class="container item_info">
                     <i class="glyphicon glyphicon-gift"></i>
-                    <h4>Nacimiento</h4>
-                    <p>9 mayo de 1988</p>
+                    <h4>{{ "about_section.birth" | t  }}</h4>
+                    <p>{{ "about_section.my_birth" | t  }}</p>
                 </div>
               </div>
             </div>
