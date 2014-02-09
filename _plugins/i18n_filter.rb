@@ -1,6 +1,6 @@
 require 'i18n'
 
-LOCALE = :es # set your locale
+LOCALE = :en # set your locale
 I18n.enforce_available_locales = true;
 # I18n.available_locales = [:es, :en]
 
