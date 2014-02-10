@@ -27,7 +27,7 @@ Since I don’t have any audio device or source connected to my laptop only 1 (t
 
 **\*You need to get a Powerpack Alfred License to install extensions**
 
-### Solution failures
+### Solution in case of failures
 
 It is possible that the first time you use it you do not observe any input or output device, but do not be alarmed, it's just that you have to give accessibility permissions  to Alfred. * You only go *System Preferences > Security and privacy* Then locate the tab *Privacy* in *Accessibility* option and you give the necessary permissions. It should be something like :
 
