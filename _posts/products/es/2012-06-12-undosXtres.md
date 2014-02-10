@@ -1,7 +1,7 @@
 ---
 layout: product
 title:  "UndosXtres.com Catalog - iOS"
-name:  "UndosXtres.com Catalog - iOS"
+name:  "Catálogo UndosXtres.com - iOS"
 date:   2012-06-12 16:10:42
 categories: es portfolio
 lang: es
