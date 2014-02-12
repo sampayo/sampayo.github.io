@@ -11,10 +11,10 @@ tags: mule_esb deploy
 type: post
 ---
 
-Last month in the office we where trying to deploy our Mule application as a service to Tomcat in a server. We tried several tutorials out there involving wrapping it in a web application, .WAR files and a lot of stuff that didn’t work quite well for us.
+Last month in the office we where trying to deploy our [Mule ESB](http://www.mulesoft.org/) application as a service to Tomcat in a server. We tried several tutorials out there involving wrapping it in a web application, .WAR files and a lot of stuff that didn’t work quite well for us.
 We managed to deploy a Mule application in a express and simple way that it was almost too easy to be true:
 
-- Download Mule standalone.
+- Download [Mule Standalone](http://www.mulesoft.org/download-mule-esb-community-edition).
 - Unpack it in the server’s location of your desire. 
 - Place your zipped Mule application in the /mule-standalone/apps directory.
 - If you have any kind of JDBC connector .jar, place it in the /mule-standalone/lib/mule directory.
