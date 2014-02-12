@@ -626,6 +626,7 @@ footer h6, h3{
 
  }
 
+<<<<<<< HEAD
 .ad-side {
   overflow: hidden;
   text-align: center;
@@ -645,6 +646,8 @@ footer h6, h3{
   float: left;
 }
 
+=======
+>>>>>>> 17ec10482f342ecf7b254ec5fcc19ab8dfe46c77
  /* ---------------------------------------------------------------------- */
 /*  
 /*  ipad Version
@@ -654,7 +657,11 @@ footer h6, h3{
  .info_container{
   padding: 0px;
 }
+<<<<<<< HEAD
 .border_container, .ad-side{
+=======
+.border_container{
+>>>>>>> 17ec10482f342ecf7b254ec5fcc19ab8dfe46c77
   margin: 5px;
 }
 .item_info{
@@ -737,7 +744,11 @@ footer h6, h3{
       margin: 0px;
       border: 0px;
     }
+<<<<<<< HEAD
     .border_container, .ad-side{
+=======
+    .border_container{
+>>>>>>> 17ec10482f342ecf7b254ec5fcc19ab8dfe46c77
       padding: 0px;
       border: 0px;
     }
@@ -1018,4 +1029,24 @@ padding-bottom: 40px;
 .banner_pub{
   padding: 10px;
 }
+<<<<<<< HEAD
 
+=======
+.ad-side {
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #DFDDDD;
+  -moz-box-box-shadow: 2px 2px 1px rgba(0,0,0, 0.075);
+  -webkit-box-shadow: 2px 2px 1px rgba(0,0,0, 0.075);
+    box-shadow: 2px 2px 1px rgba(0,0,0, 0.075);
+    padding: 0px;
+    margin-bottom: 5px;
+}
+.ad-side p{
+  margin: 35px 0 5px 0;
+}
+.ad-side .ad-banner{
+  float: left;
+}
+>>>>>>> 17ec10482f342ecf7b254ec5fcc19ab8dfe46c77
