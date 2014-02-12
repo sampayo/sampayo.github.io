@@ -37,7 +37,13 @@
     </div>
 
     <!-- Section Area - search-->
-    {% include search.html %}
-    {% include latest_posts.html %}
+    <div class="col-sm-6 col-md-3 banner_right" >
+        {% include banner_right/search.html %}
+        {% include banner_right/latest_posts.html %}
+    </div>
+    <!-- rectangulo ancho -->
+    <div class="col-md-3 col-sm-6 banner_right">
+        {% include banner_right/banner.html %}
+    </div>
     <!-- End Section Area - search-->
 </div>

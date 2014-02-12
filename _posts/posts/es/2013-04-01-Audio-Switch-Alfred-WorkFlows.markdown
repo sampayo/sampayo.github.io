@@ -20,7 +20,7 @@ Para cambiar entre dispositivos de entrada disparamos Alfred 2 y colocamos la pa
 
 ![Reponsive image][1]{.img-responsive}
 
-EL mismo concepto aplica para cambiar entre dispositivos de salidas pero utilizando `ouput`.
+EL mismo concepto aplica para cambiar entre dispositivos de salidas pero utilizando `output`.
 
 ![Reponsive image][2]{.img-responsive}
 
