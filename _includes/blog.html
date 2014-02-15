@@ -1,5 +1,9 @@
 <div class="container">
     <div class="col-md-9 info_container">
+        <div class="ad-side">
+            {% include banner_right/banner_large_horizontal.html %}
+            <p>{{ "helper.publicity" | t  }}</p>
+        </div>
         <div class = "border_container">
         {% for post in site.posts %}
         {% if post.categories[0] == page.lang and post.type == "post" %}

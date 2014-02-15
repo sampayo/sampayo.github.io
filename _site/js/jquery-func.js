@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 	//=================================== Ligbox  ===================================//
 	
-	jQuery("a[class*=html_portfolio]").fancybox({		
+	$("a[class*=html_portfolio]").fancybox({		
         'autoScale'     	: true,
         'overlayOpacity'	:	0.7,
 		'overlayColor'		:	'#000000',	
@@ -60,7 +60,7 @@ $(document).ready(function(){
 		'type'				: 'iframe'
 	});
 
-	jQuery("a[class*=html_blog]").fancybox({
+	$("a[class*=html_blog]").fancybox({
 		'width'				: '65',
 		'height'			: '110',		
         'autoScale'     	: true,
@@ -73,7 +73,7 @@ $(document).ready(function(){
 		'type'				: 'iframe'
 	});
 
-	    jQuery("a[class*=fancybox]").fancybox({
+	    $("a[class*=fancybox]").fancybox({
 		'overlayOpacity'	:	0.7,
 		'overlayColor'		:	'#000000',
 		'transitionIn'		: 'elastic',
@@ -84,8 +84,8 @@ $(document).ready(function(){
 		'centerOnScroll'	: true
 	});
 	
-	jQuery("a[class*='video_lightbox']").click(function(){
-		var et_video_href = jQuery(this).attr('href'),
+	$("a[class*='video_lightbox']").click(function(){
+		var et_video_href = $(this).attr('href'),
 			et_video_link;
 
 		et_vimeo = et_video_href.match(/vimeo.com\/(.*)/i);
@@ -95,7 +95,7 @@ $(document).ready(function(){
 			if ( et_youtube != null ) et_video_link = 'http://youtube.com/embed/' + et_youtube[1];
 		}
 		
-		jQuery.fancybox({
+		$.fancybox({
 			'overlayOpacity'	:	0.7,
 			'overlayColor'		:	'#000000',
 			'autoScale'		: true,
