@@ -231,7 +231,8 @@ es:
   helper:
     english: "Inglés"
     spanish: "Español"  
-    publicity: "Publicidad"    
+    publicity: "Publicidad"   
+    donation: "Donaciones" 
   latest_entries: "Últimas entradas"      
   about: "Sobre mi"
   skills: "Habilidades"
