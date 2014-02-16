@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="description" content="Tutorial para generar documentacion en Xcode con AppleDoc">        
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+    <title>Documentación con AppleDoc Parte 1</title>
+  
+  <meta name="viewport" content="width=device-width">
+  <LINK REL="shortcut icon" HREF="http://www.gravatar.com/avatar/6352c71a03d5b247726deda291af1539?s=30"/>
+
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script type="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+ <!-- Logo -->
+ 
+ 
+
+ 
+ 
+ 
+
+ <header class="logo" id="about">
+  <div class="container">
+
+    <div class="col-sm-3  col-sm-offset-9 language">
+      <p>
+      <a href="\es/documentation-with-appledoc-part-1 ">Español</a> | 
+        <a href="\en/documentation-with-appledoc-part-1 ">Inglés</a>
+      </p>
+    </div>
+
+    <div class="title_logo">
+      <h1>Ricardo Sampayo. <small> Ingeniero Informático</small></h1>
+    </div>
+  </div>
+</header>
+<!-- End Logo -->
+<!-- Nav-->
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation" id="nav_bar_custom"> <!-- navbar-fixed-top -->
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex8-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand visible-xs" href="#">* * *</a>
+    </div>
+
+    <!-- Place everything within .nav-collapse to hide it until above 768px -->
+    <div class="nav-collapse navbar-collapse navbar-ex8-collapse collapse">
+      <ul id="menu" class="nav navbar-nav" >
+        <li><a href="/es/#about">Sobre mi</a></li>
+        <li><a href="/es/#skills">Habilidades</a></li>
+        <li><a href="/es/#education">Educación</a></li>
+        <li><a href="/es/#employment">Experiencia</a></li>
+        <li><a href="/es/#works">Portafolio</a></li>
+        <li><a href="/es/#contact">Contact</a></li>
+        <li><a href="/es/blog">Blog</a></li>
+      </ul>
+    </div><!-- /.nav-collapse -->
+    <!-- /.container -->
+  </nav><!-- /.navbar -->
+
+</div>
+<!-- <h2>Documentation with AppleDoc Part 1</h2>
+<p class="meta">17 Feb 2014</p>
+
+<div class="post"><p>Hace unos días en mi trabajo me toco desarrollar una aplicación, cuyos requerimientos incluían la documentación del código. Este requerimiento. Esto aunque es buena practica sobretodo no es lo mas divertido de nuestro trabajo.</p>
+
+<p>AppleDoc es una herramienta que ayuda a los desarrolladores de Objective-C generan la documentación del código basando en comentarios con un formato especial en la cabecera de cada uno de los objetos que forman el código fuente. AppleDoc es capaz leer los comentarios del código y generar documentación visualmente atractiva al usuario en formato HTML, al igual que Apple con su documentación de Xcode totalmente indexada y navegable.</p>
+
+<p>Para mi me resulto bastante importante esta herramienta porque prácticamente te obliga por medio de advertencia (warning que personalmente siempre trato de evitar) a comentar cada uno de los atributos, métodos y clases del código.</p>
+<hr />
+<h2 id="instalacin_appledoc">Instalación AppleDoc</h2>
+
+<p>Para instalar AppleDoc es bastante sencillo, bastará con algunas líneas en el terminal de mac. lo primero que debemos hacer es clocar el repositorio, con el siguiente comando git.</p>
+<pre>
+git clone git://github.com/tomaz/appledoc.git
+</pre>
+<p>Luego lo instalamos corriendo el siguiente script</p>
+<pre>
+sudo sh install-appledoc.sh
+</pre>
+<h3 id="alternativa_con_homebrew">Alternativa con <a href="http://brew.sh/">Homebrew</a></h3>
+
+<p>Esta es la forma como yo particularmente lo instale, es con la ayuda de <a href="http://brew.sh/">Homebrew</a> y solo es necesaria una línea de comando y listo (Homebrew no instala las plantillas por defecto):</p>
+<pre>
+brew install appledoc
+</pre>
+<p>Cualquiera de las alternativas que utilicen para instalarlos resultará bastante sencillo, ahora veremos como integrar esta documentación a nuestros proyectos.</p>
+<hr />
+<h2 id="integracin_de_appledoc_en_el_proyecto">Integración de AppleDoc en el proyecto</h2>
+
+<p>En primer lugar debemos automatizar el proceso de generación de la documentación en formato HTML. para esto vamos a agregar a nuestro proyecto un nuevo target de compilación para mantener el target principal de proyecto ajeno a la documentación.</p>
+
+<p>Los pasos a seguir son los siguientes:</p>
+
+<h3 id="agregamos_un_nuevo_target_de_compilacin_al_proyecto">Agregamos un nuevo target de compilación al proyecto</h3>
+
+<p>Para esto nos ubicamos en los ajustes del proyectos y presionamos: <em>Add Target</em></p>
+
+<p><img src="http://i.imgur.com/csb7Qbo.png" alt="Add Target" class="img-responsive" /></p>
+
+<p>Una vez hecho esto se despliega una nueva ventana y elegimos un target de compilación.</p>
+
+<p><img src="http://i.imgur.com/QphJSgg.png" alt="Add Target Compilation" class="img-responsive" /></p>
+
+<p>Listo solo nos queda agregarle un nombre en mi caso utilice <em>Documentation</em> y lo agregamos a nuestro sistema.</p>
+
+<h3 id="configuramos_el_build_phase_para_que_llame_al_appledoc">Configuramos el build phase para que llame al AppleDoc</h3>
+
+<p>Ahora tenemos que personalizar la forma en que se va a ejecutar el AppleDoc con los argumentos adecuados. En primer lugar, asegúrese de que está seleccionado el target de documentación y nos ubicamos en la pestaña <em>Build Fase</em></p>
+
+<p>Una vez ubicados ahí, agregamos un <em>Script Build Fase</em> de la siguiente manera:</p>
+
+<p><img src="http://i.imgur.com/HICiV4M.png" alt="Build Fase" class="img-responsive" /></p>
+
+<p>Después de haber agregado esto vemos como se agrega una sección más llamada <em>Run Script</em> y ahí es donde agregamos el siguiente script</p>
+<pre>
+/usr/local/bin/appledoc \
+--project-name "${PROJECT_NAME}" \
+--project-company "RicardoSampayo" \
+--company-id "com.ricardosampayo" \
+--output "~/Projects/Help/${PROJECT_NAME}" \
+--install-docset \
+--logformat xcode \
+--keep-merged-sections \
+--keep-undocumented-objects \
+--keep-undocumented-members \
+--keep-intermediate-files \
+--no-repeat-first-par \
+--no-warn-invalid-crossref \
+--merge-categories \
+--exit-threshold 2 \
+--docset-platform-family iphoneos \
+--ignore "" \
+--include "${PROJECT_DIR}/${PROJECT_NAME}/Documentation/Images" \
+--ignore "LoadableCategory.h" \
+--index-desc "${PROJECT_DIR}/readme.markdown" \
+"${PROJECT_DIR}/${PROJECT_NAME}"
+</pre>
+<p>Con esta implementación solo debemos documentar todo el proyecto y compilar este target de documentación y nos daremos cuenta que en la ruta <code>--output</code> se generará un html con la documentación del proyecto.</p>
+
+<h3 id="archivo_introduccin_de_la_documentacin">Archivo introducción de la documentación</h3>
+
+<p>En esta etapa del tutorial vamos a crear la introducción a nuestra documentación html. Simplemente vamos a crear un archivo con formato <em>markdown</em> que ubicaremos en la dirección que definimos en el paso anterior bajo la etiqueta <code>--index-desc</code>. En este archivo simplemente escribimos una breve introducción del proyecto o lo que queramos y esto se mostrará al principio de la documentación una vez compilamos el target.</p>
+
+<h3 id="generar_la_documentacin">Generar la documentación.</h3>
+
+<p>Probablemente en esta parte del tutorial ya intuyan como generar la documentación, pero por si acaso es bastante simple, solo tienen que cambiar el target de ejecución de la aplicación al nuevo target de documentación y luego presionan play para correr el target o simplemente <code>Cmd-b</code> para compilarlo.</p>
+
+<p>Una vez termine la compilación buscamos en la ruta establecida, y veremos el conjuro de archivos html con la documentación del proyecto.</p>
+
+<h3 id="donde_podemos_ver_la_documentacin_creada">¿Donde podemos ver la Documentación creada?</h3>
+
+<p>La documentación se pude conseguir obviamente en la ruta establecida en el script de configuración definido en pasos anteriores bajo la etiqueta <code>--index-desc</code> y se puede abrir con el browser y fácilmente ir navegando por todas las clases.</p>
+
+<p>AppleDoc también indexa la documentación en los archivos de Xcode, así que fácilmente podremos visualizar esta documentación en la ventana de <em>Documentation &amp; Api Reference</em>, que podemos acceder a ella desde <em>Help</em> o con el atajo <code>Opt-Cmd-?</code>. y se vera de la siguiente manera:</p>
+
+<p><img src="http://i.imgur.com/DckRgcd.png" alt="Documentation" class="img-responsive" /></p>
+
+<p>Como ven <em>Guardian24 Documentation</em> es mi archivo de documentación y ven como muestra todas las clases de mi proyecto como si esta fuera nativa de Apple.</p>
+
+<p>Otra forma de ver esta documentación es con ayuda de herramientas externas como por ejemplo la bastante popular aplicación <a href="http://kapeli.com/dash">Dash</a>, que es un navegador de documentación offline con mas de 130 lenguajes.</p>
+<hr />
+<h2 id="conclusin">Conclusión</h2>
+
+<p>AppleDoc es una alternativa bastante util y eficiente para documentar nuestro código y generar archivos visualmente atractivos para un usuario final en formato HTML. Otra característica que para mi es positiva, es el hecho de que genere advertencias en el código en caso de olvidar documentar algún objeto, por lo que nunca lo olvidaras.</p>
+
+<p>Recuerden que un código bien documentado agiliza procesos de desarrollo e integración con otros miembros del equipo de desarrollo.</p>
+
+<p>Espero que les gustara este tutorial y estén alertas a los próximos, si tienen dudas o comentarios no dudes en hacérmelo saber en la sección de comentarios.</p>
+
+<p>Chao ;)</p></div>
+-->
+<!-- Info Area - about-->
+<div class="container">
+<!-- <h1>17 Feb 2014---</h1>
+-->	
+
+<div class="col-md-9  info_container ">
+	<div class="ad-side">
+		<div class="ad-banner">
+	<ins class="adsbygoogle"
+	style="display:inline-block;width:728px;height:90px"
+	data-ad-client="ca-pub-0619047485125063"
+	data-ad-slot="5041446301"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+</div>
+		<p>Publicidad</p>
+	</div>
+	<div class = "border_container">
+		<!-- <section class="info_area" > -->
+		<div class="row">
+			<div class="title_section">
+				<h1>
+					17 Feb 2014
+					<span class="arrow_title"></span>
+				</h1>
+					<!-- <small>Una pequeño resumen sobre mi.</small>
+				-->
+			</div>
+
+
+			<div class="row post_header" >
+				<div class="col-sm-3">
+					<img src="http://i.imgur.com/k7GzSK2.png" class="img-responsive img-rounded" alt="Reponsive image"></div>
+
+					<div class="col-sm-9">
+						<h1 class="title_resalt">Documentación con AppleDoc Parte 1</h1>
+						
+						<span class="label label-default">documentation</span>
+						
+						<span class="label label-default">Objective-C</span>
+						
+						<span class="label label-default">Apple</span>
+						
+
+
+						<div class="row social_post">
+							<!-- AddThis Button BEGIN -->
+							<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+								<a class="addthis_button_preferred_1"></a>
+								<a class="addthis_button_preferred_2"></a>
+								<a class="addthis_button_preferred_3"></a>
+								<a class="addthis_button_preferred_4"></a>
+								<a class="addthis_button_compact"></a>
+								<a class="addthis_counter addthis_bubble_style"></a>
+							</div>
+
+							<!-- AddThis Button END -->
+
+							<!-- AddThis Button END -->
+
+						</div>
+					</div>
+				</div>
+				<div class = "container line_separator"></div>
+				<div class="container post_content">
+
+					<div class="col-sm-12">
+					<p>Hace unos días en mi trabajo me toco desarrollar una aplicación, cuyos requerimientos incluían la documentación del código. Este requerimiento. Esto aunque es buena practica sobretodo no es lo mas divertido de nuestro trabajo.</p>
+
+<p>AppleDoc es una herramienta que ayuda a los desarrolladores de Objective-C generan la documentación del código basando en comentarios con un formato especial en la cabecera de cada uno de los objetos que forman el código fuente. AppleDoc es capaz leer los comentarios del código y generar documentación visualmente atractiva al usuario en formato HTML, al igual que Apple con su documentación de Xcode totalmente indexada y navegable.</p>
+
+<p>Para mi me resulto bastante importante esta herramienta porque prácticamente te obliga por medio de advertencia (warning que personalmente siempre trato de evitar) a comentar cada uno de los atributos, métodos y clases del código.</p>
+<hr />
+<h2 id="instalacin_appledoc">Instalación AppleDoc</h2>
+
+<p>Para instalar AppleDoc es bastante sencillo, bastará con algunas líneas en el terminal de mac. lo primero que debemos hacer es clocar el repositorio, con el siguiente comando git.</p>
+<pre>
+git clone git://github.com/tomaz/appledoc.git
+</pre>
+<p>Luego lo instalamos corriendo el siguiente script</p>
+<pre>
+sudo sh install-appledoc.sh
+</pre>
+<h3 id="alternativa_con_homebrew">Alternativa con <a href="http://brew.sh/">Homebrew</a></h3>
+
+<p>Esta es la forma como yo particularmente lo instale, es con la ayuda de <a href="http://brew.sh/">Homebrew</a> y solo es necesaria una línea de comando y listo (Homebrew no instala las plantillas por defecto):</p>
+<pre>
+brew install appledoc
+</pre>
+<p>Cualquiera de las alternativas que utilicen para instalarlos resultará bastante sencillo, ahora veremos como integrar esta documentación a nuestros proyectos.</p>
+<hr />
+<h2 id="integracin_de_appledoc_en_el_proyecto">Integración de AppleDoc en el proyecto</h2>
+
+<p>En primer lugar debemos automatizar el proceso de generación de la documentación en formato HTML. para esto vamos a agregar a nuestro proyecto un nuevo target de compilación para mantener el target principal de proyecto ajeno a la documentación.</p>
+
+<p>Los pasos a seguir son los siguientes:</p>
+
+<h3 id="agregamos_un_nuevo_target_de_compilacin_al_proyecto">Agregamos un nuevo target de compilación al proyecto</h3>
+
+<p>Para esto nos ubicamos en los ajustes del proyectos y presionamos: <em>Add Target</em></p>
+
+<p><img src="http://i.imgur.com/csb7Qbo.png" alt="Add Target" class="img-responsive" /></p>
+
+<p>Una vez hecho esto se despliega una nueva ventana y elegimos un target de compilación.</p>
+
+<p><img src="http://i.imgur.com/QphJSgg.png" alt="Add Target Compilation" class="img-responsive" /></p>
+
+<p>Listo solo nos queda agregarle un nombre en mi caso utilice <em>Documentation</em> y lo agregamos a nuestro sistema.</p>
+
+<h3 id="configuramos_el_build_phase_para_que_llame_al_appledoc">Configuramos el build phase para que llame al AppleDoc</h3>
+
+<p>Ahora tenemos que personalizar la forma en que se va a ejecutar el AppleDoc con los argumentos adecuados. En primer lugar, asegúrese de que está seleccionado el target de documentación y nos ubicamos en la pestaña <em>Build Fase</em></p>
+
+<p>Una vez ubicados ahí, agregamos un <em>Script Build Fase</em> de la siguiente manera:</p>
+
+<p><img src="http://i.imgur.com/HICiV4M.png" alt="Build Fase" class="img-responsive" /></p>
+
+<p>Después de haber agregado esto vemos como se agrega una sección más llamada <em>Run Script</em> y ahí es donde agregamos el siguiente script</p>
+<pre>
+/usr/local/bin/appledoc \
+--project-name "${PROJECT_NAME}" \
+--project-company "RicardoSampayo" \
+--company-id "com.ricardosampayo" \
+--output "~/Projects/Help/${PROJECT_NAME}" \
+--install-docset \
+--logformat xcode \
+--keep-merged-sections \
+--keep-undocumented-objects \
+--keep-undocumented-members \
+--keep-intermediate-files \
+--no-repeat-first-par \
+--no-warn-invalid-crossref \
+--merge-categories \
+--exit-threshold 2 \
+--docset-platform-family iphoneos \
+--ignore "" \
+--include "${PROJECT_DIR}/${PROJECT_NAME}/Documentation/Images" \
+--ignore "LoadableCategory.h" \
+--index-desc "${PROJECT_DIR}/readme.markdown" \
+"${PROJECT_DIR}/${PROJECT_NAME}"
+</pre>
+<p>Con esta implementación solo debemos documentar todo el proyecto y compilar este target de documentación y nos daremos cuenta que en la ruta <code>--output</code> se generará un html con la documentación del proyecto.</p>
+
+<h3 id="archivo_introduccin_de_la_documentacin">Archivo introducción de la documentación</h3>
+
+<p>En esta etapa del tutorial vamos a crear la introducción a nuestra documentación html. Simplemente vamos a crear un archivo con formato <em>markdown</em> que ubicaremos en la dirección que definimos en el paso anterior bajo la etiqueta <code>--index-desc</code>. En este archivo simplemente escribimos una breve introducción del proyecto o lo que queramos y esto se mostrará al principio de la documentación una vez compilamos el target.</p>
+
+<h3 id="generar_la_documentacin">Generar la documentación.</h3>
+
+<p>Probablemente en esta parte del tutorial ya intuyan como generar la documentación, pero por si acaso es bastante simple, solo tienen que cambiar el target de ejecución de la aplicación al nuevo target de documentación y luego presionan play para correr el target o simplemente <code>Cmd-b</code> para compilarlo.</p>
+
+<p>Una vez termine la compilación buscamos en la ruta establecida, y veremos el conjuro de archivos html con la documentación del proyecto.</p>
+
+<h3 id="donde_podemos_ver_la_documentacin_creada">¿Donde podemos ver la Documentación creada?</h3>
+
+<p>La documentación se pude conseguir obviamente en la ruta establecida en el script de configuración definido en pasos anteriores bajo la etiqueta <code>--index-desc</code> y se puede abrir con el browser y fácilmente ir navegando por todas las clases.</p>
+
+<p>AppleDoc también indexa la documentación en los archivos de Xcode, así que fácilmente podremos visualizar esta documentación en la ventana de <em>Documentation &amp; Api Reference</em>, que podemos acceder a ella desde <em>Help</em> o con el atajo <code>Opt-Cmd-?</code>. y se vera de la siguiente manera:</p>
+
+<p><img src="http://i.imgur.com/DckRgcd.png" alt="Documentation" class="img-responsive" /></p>
+
+<p>Como ven <em>Guardian24 Documentation</em> es mi archivo de documentación y ven como muestra todas las clases de mi proyecto como si esta fuera nativa de Apple.</p>
+
+<p>Otra forma de ver esta documentación es con ayuda de herramientas externas como por ejemplo la bastante popular aplicación <a href="http://kapeli.com/dash">Dash</a>, que es un navegador de documentación offline con mas de 130 lenguajes.</p>
+<hr />
+<h2 id="conclusin">Conclusión</h2>
+
+<p>AppleDoc es una alternativa bastante util y eficiente para documentar nuestro código y generar archivos visualmente atractivos para un usuario final en formato HTML. Otra característica que para mi es positiva, es el hecho de que genere advertencias en el código en caso de olvidar documentar algún objeto, por lo que nunca lo olvidaras.</p>
+
+<p>Recuerden que un código bien documentado agiliza procesos de desarrollo e integración con otros miembros del equipo de desarrollo.</p>
+
+<p>Espero que les gustara este tutorial y estén alertas a los próximos, si tienen dudas o comentarios no dudes en hacérmelo saber en la sección de comentarios.</p>
+
+<p>Chao ;)</p>
+					<div class="ad-banner">
+	<ins class="adsbygoogle"
+	style="display:inline-block;width:728px;height:90px"
+	data-ad-client="ca-pub-0619047485125063"
+	data-ad-slot="5041446301"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+</div>						<!-- Horizontal -->
+						
+
+					</div>
+				</div>
+				<div class = "container line_separator"></div>
+				<div class="container post_header" ></div>
+				<div class = "container">
+					<div id="disqus_thread"></div>
+
+					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+				</div>
+
+
+			</div>  
+			<!-- </section>	 -->
+		</div>
+	</div>
+	<!-- Section Area - search-->
+	<!-- <divclass="container"></div> -->
+	<div class="col-sm-6 col-md-3 banner_right" >
+		<div class="right_frame"> 
+	<div class = "border_container">
+	     <section class="info_area" >
+	        <div class="panel panel-primary">
+	            <div class="panel-heading">
+	              <input type="text" class="search-field" placeholder="Search for articles">
+	            </div>
+	            <div class="panel-body list-group results">
+
+	            </div>
+	          </div>
+	    </section>
+	</div>
+	<!-- <a href="{url}"  title="{title}">{title}</a> -->
+</div>
+
+<script src="/js/simplejekyllSearch.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+     $('.search-field').simpleJekyllSearch({
+            jsonFile        : '/es/blog/search.json',
+            jsonFormat      : 'title,category,desc,url,date',
+            template        : '<a href="{url}" class="list-group-item" title="{title}">{title}</a>',
+            searchResults   : '.results',
+            searchResultsTitle   : '',
+            limit           : '10',
+            noResults       : '<p class="list-group-item">Nothing found</p>'
+    });
+
+});
+</script>
+		<div class="right_frame">
+ 	<div class = "border_container">
+ 		<h4>Últimas entradas</h4>
+		<section class="info_area row list_post"> 
+			<div class ="list-group" > 
+			
+        		
+				 <a href="/es/documentation-with-appledoc-part-1" class="list-group-item row">
+				 	<div class="col-xs-3"> <img src="http://i.imgur.com/k7GzSK2.png" class="img-responsive img-rounded" alt="Reponsive image"></div>
+				 	<div class="col-xs-9">
+				     <p class="list-group-item-heading title">Documentación con AppleDoc Parte 1</p>
+    				 <p class="list-group-item-text date"> <span class="glyphicon glyphicon-calendar"></span> 17 Feb 2014</p>
+    				</div>
+				</a>
+        		
+         	
+        		
+				 <a href="/es/portfolio/codefuel-catalog" class="list-group-item row">
+				 	<div class="col-xs-3"> <img src="http://i.imgur.com/StK7dX7.png" class="img-responsive img-rounded" alt="Reponsive image"></div>
+				 	<div class="col-xs-9">
+				     <p class="list-group-item-heading title">Catálogo de CodeFuel- iOS</p>
+    				 <p class="list-group-item-text date"> <span class="glyphicon glyphicon-calendar"></span> 21 Abr 2013</p>
+    				</div>
+				</a>
+        		
+         	
+        		
+				 <a href="/es/Audio-Switch-Alfred-WorkFlows" class="list-group-item row">
+				 	<div class="col-xs-3"> <img src="http://i.imgur.com/6bnCMY4.png" class="img-responsive img-rounded" alt="Reponsive image"></div>
+				 	<div class="col-xs-9">
+				     <p class="list-group-item-heading title">Switch de dispositivos de audio Alfred-WorkFlows</p>
+    				 <p class="list-group-item-text date"> <span class="glyphicon glyphicon-calendar"></span> 01 Abr 2013</p>
+    				</div>
+				</a>
+        		
+         	
+        		
+				 <a href="/es/Mulesoft-express-deployment-as-Tomcat-service" class="list-group-item row">
+				 	<div class="col-xs-3"> <img src="http://i.imgur.com/WVrZaaV.png" class="img-responsive img-rounded" alt="Reponsive image"></div>
+				 	<div class="col-xs-9">
+				     <p class="list-group-item-heading title">Desplegar el Mule ESB en un servidor de aplicaciones.</p>
+    				 <p class="list-group-item-text date"> <span class="glyphicon glyphicon-calendar"></span> 25 Mar 2013</p>
+    				</div>
+				</a>
+        		
+         	
+        		
+				 <a href="/es/portfolio/Casa-Oliveira" class="list-group-item row">
+				 	<div class="col-xs-3"> <img src="http://i.imgur.com/5275pFp.gif" class="img-responsive img-rounded" alt="Reponsive image"></div>
+				 	<div class="col-xs-9">
+				     <p class="list-group-item-heading title">Catálogo Casa Oliveira - iOS</p>
+    				 <p class="list-group-item-text date"> <span class="glyphicon glyphicon-calendar"></span> 03 Dic 2012</p>
+    				</div>
+				</a>
+        		
+         	
+			</div>
+
+	 </section> 
+	 </div>
+</div>
+
+	</div>
+	<!-- rectangulo ancho -->
+	<div class="col-md-3 col-sm-6 banner_right">
+		<div class="right_frame"> 
+	<div class = "border_container banner_pub">
+		<div class="ad-banner">
+			<!-- banner_right_RS -->
+			<ins class="adsbygoogle"
+			style="display:inline-block;width:250px;height:250px"
+			data-ad-client="ca-pub-0619047485125063"
+			data-ad-slot="8575165502"></ins>
+
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+</div>
+		 <div class="right_frame">
+ 	<div class = "border_container">
+ 		<h4>Donaciones</h4>
+ 		<div id="paypal">
+ 		<h6>PayPal</h6>
+ 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+ 				<input type="hidden" name="cmd" value="_s-xclick">
+ 				<input type="hidden" name="hosted_button_id" value="WHMQW6694V6BA">
+ 				<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+ 				<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+ 			</form>
+ 		</div>        
+
+ 		<div id="btc">
+ 		<h6>Bitcoin</h6>
+ 			<img src="http://blockchain.info/en/qr?data=1MCYaBkdQskbZJXYBmK4QkxUsWxuaXXaDh&size=80">
+ 			<small>1MCYaBkdQskbZJXYBmK4QkxUsWxuaXXaDh</small>
+ 		</div>
+ 	</div>
+
+ </div>
+	</div>
+	<!-- End Section Area - search-->
+</div>
+
+
+<script type="text/javascript">
+
+</script>
+
+
+<script type="text/javascript">
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ricardosampayo'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+			// this.language = "es_ES";
+
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+
+	<script type="text/javascript">
+		var addthis_config = {data_use_cookies:false}
+		var addthis_share = {
+			url_transforms: {
+				shorten: {
+					twitter: 'bitly',
+					facebook: 'bitly'
+				},
+			},
+			shorteners: {
+				bitly: {
+					login: 'o_892eutnsl',
+					apiKey: 'R_f14c43a8b7d3d43084c48cbc25b1e8ba'
+				}
+			}
+         // ,
+         // templates : {
+         // twitter : "@RicardoSampayo_ publicó:  -> | "
+    // }
+}
+</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52080e20521b6aa5"></script>
+
+
+<footer>
+ 	<div class="container wrapper-style4 ">
+		<div class="col-12 row-special">
+			<h3>&#161;Encuentrame en las Redes Sociales!</h3>
+			<ul class="social" >
+				<li class="facebook">
+					<a href="http://www.facebook.com/RicardoSampayoS" target="_blank">Facebook</a>
+				</li>
+				<li class="twitter">
+					<a href="http://twitter.com/RicardoSampayo_" target="_blank">Twitter</a>
+				</li>
+				<li class="linkedin">
+					<a href="http://lnkd.in/3SRt-4" target="_blank">LinkedIn</a>
+				</li>
+				<li class="github">
+					<a href="http://github.com/sampayo" target="_blank">Github</a>
+				</li>
+				<li class="googleplus">
+					<a href="http://plus.google.com/u/0/114977158609433108968/" target="_blank">Google+</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+
+
+  		<div class="col-sm-6 col-sm-offset-3"><h6>&copy;2014 - Ricardo Sampayo</h6></div>
+  		
+	</div>
+</footer>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+</body>
+
+
+<!--Nav-->        
+<script type="text/javascript" src="/js/tinynav.js"></script>
+<script src="/js/jquery.sticky.js"></script>
+<!--Scroll-->        
+<script src="/js/smooth-scroll.js"></script>
+<!--Theme Options-->        
+<!--     // <script type="text/javascript" src="js/theme-options/theme-options.js"></script>
+  // <script type="text/javascript" src="js/theme-options/jquery.cookies.js"></script> -->
+  <!-- Bootstrap.js-->        
+  <script src="/js/bootstrap.js"></script>
+  <!--fUNCTIONS-->        
+
+  <!-- Google Analytics -->    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39853503-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <!-- End Google Analytics -->    
+
+
+  <script type="text/javascript" src="/js/jquery-func.js"></script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </html>
+
