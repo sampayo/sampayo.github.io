@@ -12,7 +12,7 @@ En mi tiempo libre cuando no estoy investigando o desarrollando nuevos software,
 
 	{%else%}
 
-My name is Ricardo Sampayo ,I was born in Caracas, Venezuela in May 9th 1988. Since I can remember I have had a great inclination towards electronics and new technologies which later led me to choose my career .
+My name is Ricardo Sampayo, I was born in Caracas, Venezuela in May 9th 1988. Since I can remember I have had a great inclination towards electronics and new technologies which later led me to choose my career .
 
 After finishing my primary education , and still with a great passion for technology , I was admitted by Universidad Católica Andrés Bello, one of the best universities in the country to study Computer Engineering. Throughout the career I acquired  a comprehensive training fundamentals of computer software , hardware and even project management.
 

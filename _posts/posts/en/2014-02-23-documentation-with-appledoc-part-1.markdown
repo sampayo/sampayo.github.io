@@ -37,7 +37,7 @@ sudo sh install-appledoc.sh
 
 ### Alternative with [Homebrew][6]
 
-This is how I installed it, with the help of [Homebrew] [6], and you only need a command line and that's it (Homebrew templates not installed by default): 
+This is how I installed it, with the help of [Homebrew][6], and you only need a command line and that's it (Homebrew templates not installed by default): 
 
 <pre>
 brew install appledoc
@@ -71,8 +71,9 @@ Now we need to customize how we are going to run the AppleDoc with the appropria
 
 Once we are located there, we  will add a *Script Build Phase* as follows: 
 
- ![Build Phase][9]{.img-responsive}
+![Build Phase][9]{.img-responsive}
  
+
 After you have added this we see how a section is added, it is called *Run Script* and here is where we add the following script
 
 <pre>
@@ -120,7 +121,6 @@ We can find the documentation in the established path in the configuration scrip
 Appledoc also indexes documents on file in Xcode, so we can easily use this documentation in the Windows *Documentation & API Reference*, which we can access from *Help* or with the shortcut `Cmd-Opt-?` and it will look as follows:
 
 ![Documentation][10]{.img-responsive}
-
 
 My documentation file is *Guardian24 Documentation* and as you can see, it shows every class of my project like it was native to Apple. 
 

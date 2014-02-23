@@ -61,7 +61,7 @@ Para esto nos ubicamos en los ajustes del proyectos y presionamos: *Add Target..
 
 Una vez hecho esto se despliega una nueva ventana y elegimos un target de compilación.
 
- ![Add Target Compilation][8]{.img-responsive}
+![Add Target Compilation][8]{.img-responsive}
 
 Listo, sólo nos queda agregarle un nombre, en mi caso utilicé *Documentation*, y lo agregamos a nuestro sistema.
 
@@ -71,7 +71,7 @@ Ahora tenemos que personalizar la forma en que se va a ejecutar el AppleDoc con 
 
 Una vez ubicados ahí, agregamos un *Script Build Phase* de la siguiente manera:
 
- ![Build Fase][9]{.img-responsive}
+![Build Fase][9]{.img-responsive}
  
 Después de haber agregado esto vemos cómo se agrega una sección más llamada *Run Script* y ahí es donde agregamos el siguiente script
 

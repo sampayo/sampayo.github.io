@@ -1,9 +1,9 @@
 permalink: /:categories/:title
 relative_permalinks: true
-url: http://sampayo.github.io/
+url: http://ricardosampayo.com/
 pygments: true
-paginate_path: 'page:num'
-paginate: 10
+# paginate: 2
+paginate_path: "/:categories/page:num" 
 name: Ricardo Sampayo
 markdown: maruku
 pygments: true
