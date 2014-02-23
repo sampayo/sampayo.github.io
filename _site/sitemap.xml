@@ -33,16 +33,20 @@
         <lastmod>2014-02-16T13:15:38-04:30</lastmod>
     </url>
     <url>
-        <loc>http://sampayo.github.io//en/portfolio/codefuel-catalog</loc>
-        <lastmod>2014-02-16T13:16:01-04:30</lastmod>
-    </url>
-    <url>
         <loc>http://sampayo.github.io//es/portfolio/codefuel-catalog</loc>
         <lastmod>2014-02-16T13:16:01-04:30</lastmod>
     </url>
     <url>
+        <loc>http://sampayo.github.io//en/portfolio/codefuel-catalog</loc>
+        <lastmod>2014-02-16T13:16:01-04:30</lastmod>
+    </url>
+    <url>
+        <loc>http://sampayo.github.io//en/documentation-with-appledoc-part-1</loc>
+        <lastmod>2014-02-22T20:34:52-04:30</lastmod>
+    </url>
+    <url>
         <loc>http://sampayo.github.io//es/documentation-with-appledoc-part-1</loc>
-        <lastmod>2014-02-16T13:15:38-04:30</lastmod>
+        <lastmod>2014-02-22T20:27:51-04:30</lastmod>
     </url>
     <url>
         <loc>http://sampayo.github.io//404.html</loc>
@@ -70,6 +74,6 @@
     </url>
     <url>
         <loc>http://sampayo.github.io//</loc>
-        <lastmod>2014-02-15T23:13:44-04:30</lastmod>
+        <lastmod>2014-02-22T20:34:52-04:30</lastmod>
     </url>
 </urlset>
