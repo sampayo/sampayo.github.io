@@ -104,11 +104,11 @@ ul li{
 }
 .border_left{
   border-left: 1px solid #cdcdcd;
-  padding: 0 35px 0 ;
+  padding: 0px 0px 0px 35px;
 }
 .border_right{
   border-right: 1px solid #cdcdcd;
-  padding: 0 35px 0 0;
+  padding: 0px 35px 0px 0px;
 }
 .border_top{
   border-top: 1px solid #cdcdcd;
@@ -697,10 +697,12 @@ footer h6, h3{
     height: 35px; 
     }  */ 
     .border_left{
-      border:0;
+      border:0px;
+      padding:0px;
     }
     .border_right{
-      border:0;
+      border:0px;
+      padding:0px;
     }
     .logo .title_logo h1{
       font-size: 30px;
