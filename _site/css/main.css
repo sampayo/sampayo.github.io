@@ -1034,3 +1034,7 @@ padding-bottom: 40px;
 .banner_pub{
   padding: 10px;
 }
+
+.right_frame p{
+  text-align: left;
+}
