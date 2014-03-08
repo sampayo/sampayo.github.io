@@ -206,7 +206,7 @@ en:
     pm: pm
 # Custom
   header:
-    profession: "Computer Engineer"
+    profession: "Software Engineer"
   footer:
     find_me: "Follow me on Social Networks!"   
   about_section:
@@ -225,7 +225,7 @@ en:
     database: "Data base"
   education_section:
     about_me: "My academiys."
-    education_ucab: "Computer Engineer"
+    education_ucab: "Software Engineer"
   employment_section:
     about_me: "Work experience."
   works_section:
