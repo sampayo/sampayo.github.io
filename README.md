@@ -1,4 +1,4 @@
-This is the source of my personal website [ricardosampayo.com][1]. 
+This is the source of my personal website [ricardosampayo.com][1]
 
 Steps to publish:
 
